@@ -1,0 +1,111 @@
+{
+  "signature_id": "ARKAIS-001-v2.0",
+  "name": "Arkais Pre-2000 Scientific Prose Signature",
+  "version": "2.0.0",
+  "calibration_scope": {
+    "papers_analyzed": 1500,
+    "words_analyzed": 16853926,
+    "sentences_analyzed": 818435
+  },
+  "syntax": {
+    "sentence_length": {
+      "mean": 20.53,
+      "std_dev": 15.15,
+      "target_range": [
+        22.0,
+        28.0
+      ],
+      "p10": 5.0,
+      "p25": 9.0,
+      "p50_median": 18.0,
+      "p75": 28.0,
+      "p90": 39.0,
+      "elasticity_min": 2.2
+    },
+    "subordination": {
+      "hypotactic_pct_min": 20.0,
+      "suspended_opening_pct_min": 15.0
+    }
+  },
+  "diction": {
+    "nominalization_pct_range": [
+      5.0,
+      9.0
+    ],
+    "transition_density_range": [
+      1.0,
+      2.5
+    ],
+    "banned_buzzwords": [
+      "delve",
+      "tapestry",
+      "revolutionize",
+      "testament",
+      "multifaceted",
+      "pivotal",
+      "game-changing",
+      "paramount",
+      "beacon",
+      "plethora",
+      "interplay",
+      "cornerstone",
+      "synergy",
+      "orchestrate",
+      "foster",
+      "seamlessly",
+      "holistic",
+      "cutting-edge"
+    ]
+  },
+  "epistemic": {
+    "hedge_to_certainty_ratio_range": [
+      1.4,
+      2.8
+    ],
+    "mid_sentence_connective_pct_min": 35.0
+  },
+  "paragraph_architecture": {
+    "banned_openers": [
+      "in order to understand",
+      "it is important to note",
+      "furthermore, the role of",
+      "in today's",
+      "this is not simply",
+      "delving into",
+      "a testament to"
+    ],
+    "archetypes": {
+      "ARCH-01": "Empirical Condition Prepend",
+      "ARCH-02": "Direct Observation / State Statement",
+      "ARCH-03": "Methodological Action",
+      "ARCH-04": "Dialectical Pivot / Literature Friction",
+      "ARCH-05": "Axiomatic / Operational Framing"
+    }
+  },
+  "friction": {
+    "banned_false_dichotomies": [
+      "not simply.*but rather",
+      "not merely.*but also"
+    ],
+    "friction_marker_patterns": [
+      "cannot be explained by",
+      "fails to account for",
+      "discrepancy between",
+      "incompatible with",
+      "inconsistent with"
+    ]
+  },
+  "concept_definition": {
+    "banned_glosses": [
+      "simply put",
+      "at its core",
+      "in simple terms"
+    ],
+    "operational_definition_patterns": [
+      "is defined as",
+      "we define",
+      "given by",
+      "satisfies"
+    ]
+  }
+}
