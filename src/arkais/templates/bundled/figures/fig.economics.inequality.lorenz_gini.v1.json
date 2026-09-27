@@ -1,0 +1,91 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.economics.inequality.lorenz_gini.v1",
+  "version": "1.0.0",
+  "name": "Empirical Lorenz Curve with Gini Concentration Gap",
+  "description": "Cumulative population income distribution versus diagonal line of perfect equality.",
+  "category": "figures",
+  "discipline": "economics",
+  "tags": [
+    "lorenz-curve",
+    "gini",
+    "inequality",
+    "distribution"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-790",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "The observed income distribution yields a national Gini coefficient of {gini_index} ({fig_ref}), confirming progressive tax redistribution.",
+    "required_metrics": [
+      "gini_index"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Diagonal dotted reference marks hypothetical absolute equality.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "pop_pct",
+        "type": "quantitative",
+        "title": "Cumulative Population Share (%)"
+      },
+      "y": {
+        "field": "income_pct",
+        "type": "quantitative",
+        "title": "Cumulative Income Share (%)"
+      },
+      "color": {
+        "field": "regime",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "pop_pct": 0,
+      "income_pct": 0,
+      "regime": "Observed"
+    },
+    {
+      "pop_pct": 20,
+      "income_pct": 5,
+      "regime": "Observed"
+    },
+    {
+      "pop_pct": 40,
+      "income_pct": 14,
+      "regime": "Observed"
+    },
+    {
+      "pop_pct": 60,
+      "income_pct": 31,
+      "regime": "Observed"
+    },
+    {
+      "pop_pct": 80,
+      "income_pct": 56,
+      "regime": "Observed"
+    },
+    {
+      "pop_pct": 100,
+      "income_pct": 100,
+      "regime": "Observed"
+    },
+    {
+      "pop_pct": 0,
+      "income_pct": 0,
+      "regime": "Equality Line"
+    },
+    {
+      "pop_pct": 100,
+      "income_pct": 100,
+      "regime": "Equality Line"
+    }
+  ]
+}

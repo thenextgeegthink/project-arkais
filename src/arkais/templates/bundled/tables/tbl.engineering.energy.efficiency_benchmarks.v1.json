@@ -1,0 +1,46 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.engineering.energy.efficiency_benchmarks.v1",
+  "version": "1.0.0",
+  "name": "Electrical Power Conversion Efficiency and Thermal Benchmarks",
+  "description": "DC-DC power converter efficiency percentages and heat dissipation across load percentages.",
+  "category": "tables",
+  "discipline": "engineering",
+  "tags": [
+    "energy",
+    "efficiency",
+    "power-conversion",
+    "thermal"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-1215",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The resonant converter attains a peak conversion efficiency of {peak_eff_pct}% ({tbl_ref}) at 75% rated load.",
+    "required_metrics": [
+      "peak_eff_pct"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Input bus voltage nominal at 400 V DC.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Load Percentage} & \\textbf{Input Power (W)} & \\textbf{Output Power (W)} & \\textbf{Efficiency (\\%)} & \\textbf{Dissipation (W)} \\\\\n\\midrule\n25\\% Load & $265.4$ & $250.0$ & $94.2\\%$ & $15.4$ \\\\\n50\\% Load & $518.1$ & $500.0$ & $96.5\\%$ & $18.1$ \\\\\n75\\% Load & $768.4$ & $750.0$ & $97.6\\%$ & $18.4$ \\\\\n100\\% Load & $1035.2$ & $1000.0$ & $96.6\\%$ & $35.2$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "load": "25%",
+      "in_w": 265.4,
+      "out_w": 250.0,
+      "eff": "94.2%",
+      "diss": 15.4
+    },
+    {
+      "load": "75%",
+      "in_w": 768.4,
+      "out_w": 750.0,
+      "eff": "97.6%",
+      "diss": 18.4
+    }
+  ]
+}

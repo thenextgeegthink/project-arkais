@@ -1,0 +1,80 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.physics.kinetics.arrhenius_curve.v1",
+  "version": "1.0.0",
+  "name": "Arrhenius Kinetic Rate Temperature Dissipation Curve",
+  "description": "Logarithmic reaction rate versus inverse absolute temperature yielding activation energy.",
+  "category": "figures",
+  "discipline": "physics",
+  "tags": [
+    "arrhenius",
+    "kinetics",
+    "activation-energy",
+    "chemistry",
+    "thermodynamics"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-340",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "Linear regression across the inverse thermal trajectory yields an activation barrier of {ea_kj_mol} kJ/mol ({fig_ref}).",
+    "required_metrics": [
+      "ea_kj_mol"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Slope parameter corresponds directly to $-E_a / R$.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": {
+      "type": "point",
+      "filled": true
+    },
+    "encoding": {
+      "x": {
+        "field": "inv_temp_k",
+        "type": "quantitative",
+        "title": "1000 / T (K\u207b\u00b9)"
+      },
+      "y": {
+        "field": "ln_rate",
+        "type": "quantitative",
+        "title": "ln(k [s\u207b\u00b9])"
+      },
+      "color": {
+        "field": "catalyst",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "inv_temp_k": 2.8,
+      "ln_rate": 4.12,
+      "catalyst": "Pt-Lattice"
+    },
+    {
+      "inv_temp_k": 3.0,
+      "ln_rate": 2.85,
+      "catalyst": "Pt-Lattice"
+    },
+    {
+      "inv_temp_k": 3.2,
+      "ln_rate": 1.45,
+      "catalyst": "Pt-Lattice"
+    },
+    {
+      "inv_temp_k": 3.4,
+      "ln_rate": 0.12,
+      "catalyst": "Pt-Lattice"
+    },
+    {
+      "inv_temp_k": 3.6,
+      "ln_rate": -1.24,
+      "catalyst": "Pt-Lattice"
+    }
+  ]
+}

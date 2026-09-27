@@ -1,0 +1,85 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.cs.nlp.ablation_matrix_heatmap.v1",
+  "version": "1.0.0",
+  "name": "Component Ablation Impact Heatmap",
+  "description": "Normalized accuracy degradation matrix evaluating modular architectural ablations across sub-tasks.",
+  "category": "figures",
+  "discipline": "computer_science",
+  "tags": [
+    "ablation",
+    "heatmap",
+    "nlp",
+    "evaluation"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-134",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "Isolating the attention gate yields the steepest performance penalty of {penalty_pct}% on syntactic reasoning ({fig_ref}).",
+    "required_metrics": [
+      "penalty_pct"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Values indicate percentage drop relative to the unablated state-of-the-art configuration.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "rect",
+    "encoding": {
+      "x": {
+        "field": "task",
+        "type": "nominal",
+        "title": "Evaluation Task"
+      },
+      "y": {
+        "field": "ablation",
+        "type": "nominal",
+        "title": "Ablated Module"
+      },
+      "color": {
+        "field": "score_drop",
+        "type": "quantitative",
+        "title": "Score Drop (%)",
+        "scale": {
+          "scheme": "purples"
+        }
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "task": "Syntax",
+      "ablation": "No Attention Gate",
+      "score_drop": 8.4
+    },
+    {
+      "task": "Syntax",
+      "ablation": "No LayerNorm",
+      "score_drop": 4.1
+    },
+    {
+      "task": "Syntax",
+      "ablation": "No Positional Enc",
+      "score_drop": 14.8
+    },
+    {
+      "task": "Semantics",
+      "ablation": "No Attention Gate",
+      "score_drop": 5.9
+    },
+    {
+      "task": "Semantics",
+      "ablation": "No LayerNorm",
+      "score_drop": 3.2
+    },
+    {
+      "task": "Semantics",
+      "ablation": "No Positional Enc",
+      "score_drop": 9.7
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.engineering.manufacturing.bom_mass_breakdown.v1",
+  "version": "1.0.0",
+  "name": "Modular Bill of Materials (BOM) Mass Allocation Budget",
+  "description": "Subassembly mass allocation budget and percentage variance.",
+  "category": "tables",
+  "discipline": "engineering",
+  "tags": [
+    "manufacturing",
+    "bom",
+    "mass-budget",
+    "weight"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-1240",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The aggregate mechanical assembly totals {total_mass_kg} kg ({tbl_ref}), comfortably within the 50 kg launch allocation.",
+    "required_metrics": [
+      "total_mass_kg"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Includes 10% contingency margin for fasteners and harnesses.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Subassembly} & \\textbf{Material Spec} & \\textbf{Allocated (kg)} & \\textbf{Measured (kg)} & \\textbf{Margin (\\%)} \\\\\n\\midrule\nChassis Structure & Al-6061-T6 & $18.5$ & $17.2$ & $+7.0\\%$ \\\\\nAvionics Stack & Mixed PCB & $6.2$ & $5.8$ & $+6.5\\%$ \\\\\nOptics Enclosure & Carbon-Fiber & $8.4$ & $7.9$ & $+6.0\\%$ \\\\\nThermal Blankets & Multi-Layer Mylar & $2.5$ & $2.1$ & $+16.0\\%$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "part": "Chassis",
+      "mat": "Al-6061",
+      "alloc": 18.5,
+      "meas": 17.2,
+      "margin": "+7.0%"
+    },
+    {
+      "part": "Avionics",
+      "mat": "PCB",
+      "alloc": 6.2,
+      "meas": 5.8,
+      "margin": "+6.5%"
+    }
+  ]
+}

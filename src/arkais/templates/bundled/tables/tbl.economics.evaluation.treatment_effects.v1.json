@@ -1,0 +1,44 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.economics.evaluation.treatment_effects.v1",
+  "version": "1.0.0",
+  "name": "Local Average Treatment Effects (LATE) Heterogeneity Matrix",
+  "description": "Subgroup treatment effect estimates evaluating program impact heterogeneity.",
+  "category": "tables",
+  "discipline": "economics",
+  "tags": [
+    "treatment-effects",
+    "late",
+    "heterogeneity",
+    "evaluation"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-965",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "Subgroup decomposition confirms that youth cohorts experience the largest causal gains ({effect_delta} points, {tbl_ref}).",
+    "required_metrics": [
+      "effect_delta"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Estimations condition on baseline covariates.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lccc}\n\\toprule\n\\textbf{Demographic Subgroup} & \\textbf{ITT Effect} & \\textbf{LATE Estimate} & \\textbf{Subgroup $N$} \\\\\n\\midrule\nFull Sample & $4.2^{**}$ ($0.9$) & $6.4^{**}$ ($1.3$) & $4,500$ \\\\\nUrban Cohort & $5.1^{**}$ ($1.2$) & $7.8^{**}$ ($1.6$) & $2,800$ \\\\\nRural Cohort & $2.8^{*}$ ($1.1$) & $4.2^{*}$ ($1.5$) & $1,700$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "subgroup": "Full Sample",
+      "itt": "4.2",
+      "late": "6.4",
+      "n": 4500
+    },
+    {
+      "subgroup": "Urban",
+      "itt": "5.1",
+      "late": "7.8",
+      "n": 2800
+    }
+  ]
+}

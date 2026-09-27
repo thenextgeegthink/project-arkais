@@ -1,0 +1,79 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.physics.electromagnetics.field_gradient.v1",
+  "version": "1.0.0",
+  "name": "Magnetic Flux Density Radial Decay Gradient",
+  "description": "B-field magnitude decay along radial distance from coil center.",
+  "category": "figures",
+  "discipline": "physics",
+  "tags": [
+    "electromagnetism",
+    "magnetic-field",
+    "flux-density",
+    "gradient"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-365",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "The magnetic induction drops from {b_max} T at the core to sub-{b_min} mT at {dist_cm} cm ({fig_ref}).",
+    "required_metrics": [
+      "b_max",
+      "b_min",
+      "dist_cm"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Measurements recorded with a 3-axis Hall magnetometer at 295 K.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "radial_distance_cm",
+        "type": "quantitative",
+        "title": "Radial Distance (cm)"
+      },
+      "y": {
+        "field": "flux_density_t",
+        "type": "quantitative",
+        "title": "Magnetic Induction B (T)",
+        "scale": {
+          "type": "log"
+        }
+      },
+      "color": {
+        "field": "coil_current_a",
+        "type": "nominal",
+        "legend": {
+          "title": "Excitation Current"
+        }
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "radial_distance_cm": 0.5,
+      "flux_density_t": 1.45,
+      "coil_current_a": "10 A"
+    },
+    {
+      "radial_distance_cm": 1.0,
+      "flux_density_t": 0.82,
+      "coil_current_a": "10 A"
+    },
+    {
+      "radial_distance_cm": 2.0,
+      "flux_density_t": 0.24,
+      "coil_current_a": "10 A"
+    },
+    {
+      "radial_distance_cm": 5.0,
+      "flux_density_t": 0.03,
+      "coil_current_a": "10 A"
+    }
+  ]
+}

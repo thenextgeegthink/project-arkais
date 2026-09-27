@@ -1,0 +1,83 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.physics.scatter.pareto_frontier.v1",
+  "version": "1.0.0",
+  "name": "Bi-Objective Pareto Frontier with 95% Confidence Ellipses",
+  "description": "Pareto frontier scatter plot with uncertainty bounds across frequency regimes.",
+  "category": "figures",
+  "discipline": "physics",
+  "tags": [
+    "pareto",
+    "optimization",
+    "confidence-interval",
+    "scatter",
+    "thermodynamics"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-010",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "Across drive frequencies from {x_min} to {x_max}, magnetic dissipation reaches a global minimum of {y_min} {units} ({fig_ref}), confirming the predicted lattice constraint.",
+    "required_metrics": [
+      "x_min",
+      "x_max",
+      "y_min",
+      "units"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Shaded regions represent 95% bootstrap confidence ellipses across experimental repetitions.",
+  "notes": "Experimental error bars reflect one standard deviation of the measured RF power dissipation.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": {
+      "type": "point",
+      "filled": true,
+      "size": 60
+    },
+    "encoding": {
+      "x": {
+        "field": "frequency_mhz",
+        "type": "quantitative",
+        "title": "Frequency (MHz)"
+      },
+      "y": {
+        "field": "dissipation_ratio",
+        "type": "quantitative",
+        "title": "Dissipation (10\u207b\u00b3)"
+      },
+      "color": {
+        "field": "regime",
+        "type": "nominal",
+        "legend": {
+          "title": "Lattice Regime"
+        }
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "frequency_mhz": 12.5,
+      "dissipation_ratio": 4.12,
+      "regime": "Linear"
+    },
+    {
+      "frequency_mhz": 25.0,
+      "dissipation_ratio": 2.85,
+      "regime": "Linear"
+    },
+    {
+      "frequency_mhz": 50.0,
+      "dissipation_ratio": 1.15,
+      "regime": "Optimal"
+    },
+    {
+      "frequency_mhz": 100.0,
+      "dissipation_ratio": 1.95,
+      "regime": "Turbulent"
+    }
+  ]
+}
