@@ -1,0 +1,774 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-09-25T16:30:00Z",
+  "catalog_name": "Arkais Academic Visual Assets & Scientific Table Registry (Drop 1)",
+  "maintainer": "The Next Geek Think (NGT)",
+  "total_templates": 50,
+  "templates": [
+    {
+      "id": "fig.cs.classification.confusion_matrix.v1",
+      "version": "1.0.0",
+      "name": "Normalized Multi-Class Confusion Matrix",
+      "category": "figures",
+      "discipline": "computer_science",
+      "engine": "vega-lite",
+      "tags": [
+        "confusion-matrix",
+        "classification",
+        "accuracy",
+        "evaluation"
+      ],
+      "relative_path": "figures/fig.cs.classification.confusion_matrix.v1.json"
+    },
+    {
+      "id": "fig.cs.convergence.loss_curve.v1",
+      "version": "1.0.0",
+      "name": "Optimization Loss Convergence and Validation Trajectory",
+      "category": "figures",
+      "discipline": "computer_science",
+      "engine": "vega-lite",
+      "tags": [
+        "deep-learning",
+        "loss",
+        "convergence",
+        "training",
+        "optimization"
+      ],
+      "relative_path": "figures/fig.cs.convergence.loss_curve.v1.json"
+    },
+    {
+      "id": "fig.cs.latency.distribution_histogram.v1",
+      "version": "1.0.0",
+      "name": "Tail Latency Histogram with Percentile Demarcations",
+      "category": "figures",
+      "discipline": "computer_science",
+      "engine": "vega-lite",
+      "tags": [
+        "latency",
+        "sla",
+        "tail-latency",
+        "histogram",
+        "systems"
+      ],
+      "relative_path": "figures/fig.cs.latency.distribution_histogram.v1.json"
+    },
+    {
+      "id": "fig.cs.nlp.ablation_matrix_heatmap.v1",
+      "version": "1.0.0",
+      "name": "Component Ablation Impact Heatmap",
+      "category": "figures",
+      "discipline": "computer_science",
+      "engine": "vega-lite",
+      "tags": [
+        "ablation",
+        "heatmap",
+        "nlp",
+        "evaluation"
+      ],
+      "relative_path": "figures/fig.cs.nlp.ablation_matrix_heatmap.v1.json"
+    },
+    {
+      "id": "fig.cs.systems.throughput_concurrency.v1",
+      "version": "1.0.0",
+      "name": "Throughput Scaling vs Worker Concurrency",
+      "category": "figures",
+      "discipline": "computer_science",
+      "engine": "vega-lite",
+      "tags": [
+        "throughput",
+        "concurrency",
+        "scaling",
+        "benchmarking"
+      ],
+      "relative_path": "figures/fig.cs.systems.throughput_concurrency.v1.json"
+    },
+    {
+      "id": "fig.economics.causal.rdd_sharp_pivot.v1",
+      "version": "1.0.0",
+      "name": "Sharp Regression Discontinuity Threshold Discontinuity",
+      "category": "figures",
+      "discipline": "economics",
+      "engine": "vega-lite",
+      "tags": [
+        "rdd",
+        "causal-inference",
+        "threshold",
+        "discontinuity"
+      ],
+      "relative_path": "figures/fig.economics.causal.rdd_sharp_pivot.v1.json"
+    },
+    {
+      "id": "fig.economics.inequality.lorenz_gini.v1",
+      "version": "1.0.0",
+      "name": "Empirical Lorenz Curve with Gini Concentration Gap",
+      "category": "figures",
+      "discipline": "economics",
+      "engine": "vega-lite",
+      "tags": [
+        "lorenz-curve",
+        "gini",
+        "inequality",
+        "distribution"
+      ],
+      "relative_path": "figures/fig.economics.inequality.lorenz_gini.v1.json"
+    },
+    {
+      "id": "fig.economics.macro.irf_shocks.v1",
+      "version": "1.0.0",
+      "name": "Structural Vector Autoregression Impulse Response Function",
+      "category": "figures",
+      "discipline": "economics",
+      "engine": "vega-lite",
+      "tags": [
+        "macroeconomics",
+        "irf",
+        "svar",
+        "monetary-policy"
+      ],
+      "relative_path": "figures/fig.economics.macro.irf_shocks.v1.json"
+    },
+    {
+      "id": "fig.economics.policy.diff_in_diff.v1",
+      "version": "1.0.0",
+      "name": "Difference-in-Differences Parallel Trends and Treatment Divergence",
+      "category": "figures",
+      "discipline": "economics",
+      "engine": "vega-lite",
+      "tags": [
+        "diff-in-diff",
+        "econometrics",
+        "causal-inference",
+        "policy"
+      ],
+      "relative_path": "figures/fig.economics.policy.diff_in_diff.v1.json"
+    },
+    {
+      "id": "fig.economics.survey.likert_diverging_bar.v1",
+      "version": "1.0.0",
+      "name": "Diverging Stacked Likert Scale Sentiment Distribution",
+      "category": "figures",
+      "discipline": "economics",
+      "engine": "vega-lite",
+      "tags": [
+        "likert",
+        "survey",
+        "sentiment",
+        "stacked-bar"
+      ],
+      "relative_path": "figures/fig.economics.survey.likert_diverging_bar.v1.json"
+    },
+    {
+      "id": "fig.engineering.controls.bode_frequency_plot.v1",
+      "version": "1.0.0",
+      "name": "Bode Frequency Response Magnitude and Phase Diagram",
+      "category": "figures",
+      "discipline": "engineering",
+      "engine": "vega-lite",
+      "tags": [
+        "bode-plot",
+        "control-systems",
+        "phase-margin",
+        "frequency-response"
+      ],
+      "relative_path": "figures/fig.engineering.controls.bode_frequency_plot.v1.json"
+    },
+    {
+      "id": "fig.engineering.materials.stress_strain_curve.v1",
+      "version": "1.0.0",
+      "name": "Tensile Stress-Strain Deformation Trajectory",
+      "category": "figures",
+      "discipline": "engineering",
+      "engine": "vega-lite",
+      "tags": [
+        "materials",
+        "stress-strain",
+        "yield-strength",
+        "tensile-test"
+      ],
+      "relative_path": "figures/fig.engineering.materials.stress_strain_curve.v1.json"
+    },
+    {
+      "id": "fig.engineering.reliability.weibull_distribution.v1",
+      "version": "1.0.0",
+      "name": "Weibull Cumulative Failure Probability Reliability Curve",
+      "category": "figures",
+      "discipline": "engineering",
+      "engine": "vega-lite",
+      "tags": [
+        "weibull",
+        "reliability",
+        "failure-probability",
+        "fatigue"
+      ],
+      "relative_path": "figures/fig.engineering.reliability.weibull_distribution.v1.json"
+    },
+    {
+      "id": "fig.engineering.signal.roc_auc_curve.v1",
+      "version": "1.0.0",
+      "name": "Receiver Operating Characteristic (ROC) with Area Under Curve",
+      "category": "figures",
+      "discipline": "engineering",
+      "engine": "vega-lite",
+      "tags": [
+        "roc",
+        "auc",
+        "signal-detection",
+        "classification"
+      ],
+      "relative_path": "figures/fig.engineering.signal.roc_auc_curve.v1.json"
+    },
+    {
+      "id": "fig.engineering.thermal.lattice_dissipation.v1",
+      "version": "1.0.0",
+      "name": "Thermal Fin Lattice Temperature Dissipation Profile",
+      "category": "figures",
+      "discipline": "engineering",
+      "engine": "vega-lite",
+      "tags": [
+        "thermal",
+        "heatsink",
+        "convection",
+        "dissipation"
+      ],
+      "relative_path": "figures/fig.engineering.thermal.lattice_dissipation.v1.json"
+    },
+    {
+      "id": "fig.medicine.cytometry.gating_scatter.v1",
+      "version": "1.0.0",
+      "name": "Bivariate Flow Cytometry Quadrant Gating Scatter",
+      "category": "figures",
+      "discipline": "medicine",
+      "engine": "vega-lite",
+      "tags": [
+        "flow-cytometry",
+        "immunology",
+        "gating",
+        "cd4",
+        "cd8"
+      ],
+      "relative_path": "figures/fig.medicine.cytometry.gating_scatter.v1.json"
+    },
+    {
+      "id": "fig.medicine.genomics.volcano_plot.v1",
+      "version": "1.0.0",
+      "name": "Transcriptomic Volcano Plot with Significance Thresholds",
+      "category": "figures",
+      "discipline": "medicine",
+      "engine": "vega-lite",
+      "tags": [
+        "genomics",
+        "volcano-plot",
+        "differential-expression",
+        "rna-seq"
+      ],
+      "relative_path": "figures/fig.medicine.genomics.volcano_plot.v1.json"
+    },
+    {
+      "id": "fig.medicine.meta.forest_plot.v1",
+      "version": "1.0.0",
+      "name": "Meta-Analytic Forest Plot with 95% Confidence Intervals",
+      "category": "figures",
+      "discipline": "medicine",
+      "engine": "vega-lite",
+      "tags": [
+        "forest-plot",
+        "meta-analysis",
+        "odds-ratio",
+        "evidence-synthesis"
+      ],
+      "relative_path": "figures/fig.medicine.meta.forest_plot.v1.json"
+    },
+    {
+      "id": "fig.medicine.pharmacology.dose_response_hill.v1",
+      "version": "1.0.0",
+      "name": "Sigmoidal Dose-Response Hill Curve with IC50 Mark",
+      "category": "figures",
+      "discipline": "medicine",
+      "engine": "vega-lite",
+      "tags": [
+        "pharmacology",
+        "dose-response",
+        "ic50",
+        "hill-curve"
+      ],
+      "relative_path": "figures/fig.medicine.pharmacology.dose_response_hill.v1.json"
+    },
+    {
+      "id": "fig.medicine.survival.kaplan_meier.v1",
+      "version": "1.0.0",
+      "name": "Kaplan-Meier Overall Survival Curves with Censoring",
+      "category": "figures",
+      "discipline": "medicine",
+      "engine": "vega-lite",
+      "tags": [
+        "kaplan-meier",
+        "survival",
+        "oncology",
+        "clinical-trial"
+      ],
+      "relative_path": "figures/fig.medicine.survival.kaplan_meier.v1.json"
+    },
+    {
+      "id": "fig.physics.electromagnetics.field_gradient.v1",
+      "version": "1.0.0",
+      "name": "Magnetic Flux Density Radial Decay Gradient",
+      "category": "figures",
+      "discipline": "physics",
+      "engine": "vega-lite",
+      "tags": [
+        "electromagnetism",
+        "magnetic-field",
+        "flux-density",
+        "gradient"
+      ],
+      "relative_path": "figures/fig.physics.electromagnetics.field_gradient.v1.json"
+    },
+    {
+      "id": "fig.physics.kinetics.arrhenius_curve.v1",
+      "version": "1.0.0",
+      "name": "Arrhenius Kinetic Rate Temperature Dissipation Curve",
+      "category": "figures",
+      "discipline": "physics",
+      "engine": "vega-lite",
+      "tags": [
+        "arrhenius",
+        "kinetics",
+        "activation-energy",
+        "chemistry",
+        "thermodynamics"
+      ],
+      "relative_path": "figures/fig.physics.kinetics.arrhenius_curve.v1.json"
+    },
+    {
+      "id": "fig.physics.phase.transition_boundary.v1",
+      "version": "1.0.0",
+      "name": "Thermodynamic Phase Boundary and Critical Point Locus",
+      "category": "figures",
+      "discipline": "physics",
+      "engine": "vega-lite",
+      "tags": [
+        "phase-transition",
+        "thermodynamics",
+        "critical-point",
+        "pressure-temperature"
+      ],
+      "relative_path": "figures/fig.physics.phase.transition_boundary.v1.json"
+    },
+    {
+      "id": "fig.physics.scatter.pareto_frontier.v1",
+      "version": "1.0.0",
+      "name": "Bi-Objective Pareto Frontier with 95% Confidence Ellipses",
+      "category": "figures",
+      "discipline": "physics",
+      "engine": "vega-lite",
+      "tags": [
+        "pareto",
+        "optimization",
+        "confidence-interval",
+        "scatter",
+        "thermodynamics"
+      ],
+      "relative_path": "figures/fig.physics.scatter.pareto_frontier.v1.json"
+    },
+    {
+      "id": "fig.physics.spectroscopy.psd_log_fft.v1",
+      "version": "1.0.0",
+      "name": "Power Spectral Density (PSD) on Log-Log Scale",
+      "category": "figures",
+      "discipline": "physics",
+      "engine": "vega-lite",
+      "tags": [
+        "psd",
+        "fourier",
+        "spectroscopy",
+        "noise-floor",
+        "fft"
+      ],
+      "relative_path": "figures/fig.physics.spectroscopy.psd_log_fft.v1.json"
+    },
+    {
+      "id": "tbl.cs.benchmarks.model_comparison.v1",
+      "version": "1.0.0",
+      "name": "Transformer Architecture Latency and Throughput Matrix",
+      "category": "tables",
+      "discipline": "computer_science",
+      "engine": "latex-booktabs",
+      "tags": [
+        "benchmarks",
+        "llm",
+        "latency",
+        "throughput",
+        "booktabs"
+      ],
+      "relative_path": "tables/tbl.cs.benchmarks.model_comparison.v1.json"
+    },
+    {
+      "id": "tbl.cs.datasets.partition_splits.v1",
+      "version": "1.0.0",
+      "name": "Corpus Partition Splits and Vocabulary Statistics",
+      "category": "tables",
+      "discipline": "computer_science",
+      "engine": "latex-booktabs",
+      "tags": [
+        "dataset",
+        "corpus",
+        "partitions",
+        "split"
+      ],
+      "relative_path": "tables/tbl.cs.datasets.partition_splits.v1.json"
+    },
+    {
+      "id": "tbl.cs.profiling.resource_utilization.v1",
+      "version": "1.0.0",
+      "name": "Hardware Resource Allocation and Compute Profile",
+      "category": "tables",
+      "discipline": "computer_science",
+      "engine": "latex-booktabs",
+      "tags": [
+        "hardware",
+        "profiling",
+        "vram",
+        "compute",
+        "energy"
+      ],
+      "relative_path": "tables/tbl.cs.profiling.resource_utilization.v1.json"
+    },
+    {
+      "id": "tbl.cs.theory.complexity_bounds.v1",
+      "version": "1.0.0",
+      "name": "Asymptotic Time and Space Complexity Bounds",
+      "category": "tables",
+      "discipline": "computer_science",
+      "engine": "latex-booktabs",
+      "tags": [
+        "algorithms",
+        "complexity",
+        "big-o",
+        "theory"
+      ],
+      "relative_path": "tables/tbl.cs.theory.complexity_bounds.v1.json"
+    },
+    {
+      "id": "tbl.cs.tuning.hyperparameter_space.v1",
+      "version": "1.0.0",
+      "name": "Optimization Hyperparameter Space and Selected Configurations",
+      "category": "tables",
+      "discipline": "computer_science",
+      "engine": "latex-booktabs",
+      "tags": [
+        "hyperparameters",
+        "tuning",
+        "optimization",
+        "bayesian"
+      ],
+      "relative_path": "tables/tbl.cs.tuning.hyperparameter_space.v1.json"
+    },
+    {
+      "id": "tbl.economics.econometrics.ols_2sls_regression.v1",
+      "version": "1.0.0",
+      "name": "OLS and Instrumental Variables (2SLS) Econometric Estimates",
+      "category": "tables",
+      "discipline": "economics",
+      "engine": "latex-booktabs",
+      "tags": [
+        "econometrics",
+        "ols",
+        "2sls",
+        "instrumental-variables",
+        "regression"
+      ],
+      "relative_path": "tables/tbl.economics.econometrics.ols_2sls_regression.v1.json"
+    },
+    {
+      "id": "tbl.economics.evaluation.treatment_effects.v1",
+      "version": "1.0.0",
+      "name": "Local Average Treatment Effects (LATE) Heterogeneity Matrix",
+      "category": "tables",
+      "discipline": "economics",
+      "engine": "latex-booktabs",
+      "tags": [
+        "treatment-effects",
+        "late",
+        "heterogeneity",
+        "evaluation"
+      ],
+      "relative_path": "tables/tbl.economics.evaluation.treatment_effects.v1.json"
+    },
+    {
+      "id": "tbl.economics.finance.cost_benefit_scenario.v1",
+      "version": "1.0.0",
+      "name": "Discounted Cash Flow Scenario Analysis and Payback Horizon",
+      "category": "tables",
+      "discipline": "economics",
+      "engine": "latex-booktabs",
+      "tags": [
+        "finance",
+        "npv",
+        "irr",
+        "cost-benefit",
+        "scenarios"
+      ],
+      "relative_path": "tables/tbl.economics.finance.cost_benefit_scenario.v1.json"
+    },
+    {
+      "id": "tbl.economics.robustness.sensitivity_table.v1",
+      "version": "1.0.0",
+      "name": "Model Specification and Robustness Sensitivity Matrix",
+      "category": "tables",
+      "discipline": "economics",
+      "engine": "latex-booktabs",
+      "tags": [
+        "robustness",
+        "sensitivity",
+        "fixed-effects",
+        "econometrics"
+      ],
+      "relative_path": "tables/tbl.economics.robustness.sensitivity_table.v1.json"
+    },
+    {
+      "id": "tbl.economics.summary.quantile_statistics.v1",
+      "version": "1.0.0",
+      "name": "Sample Summary Statistics and Quantile Distribution",
+      "category": "tables",
+      "discipline": "economics",
+      "engine": "latex-booktabs",
+      "tags": [
+        "summary-statistics",
+        "quantiles",
+        "median",
+        "econometrics"
+      ],
+      "relative_path": "tables/tbl.economics.summary.quantile_statistics.v1.json"
+    },
+    {
+      "id": "tbl.engineering.energy.efficiency_benchmarks.v1",
+      "version": "1.0.0",
+      "name": "Electrical Power Conversion Efficiency and Thermal Benchmarks",
+      "category": "tables",
+      "discipline": "engineering",
+      "engine": "latex-booktabs",
+      "tags": [
+        "energy",
+        "efficiency",
+        "power-conversion",
+        "thermal"
+      ],
+      "relative_path": "tables/tbl.engineering.energy.efficiency_benchmarks.v1.json"
+    },
+    {
+      "id": "tbl.engineering.manufacturing.bom_mass_breakdown.v1",
+      "version": "1.0.0",
+      "name": "Modular Bill of Materials (BOM) Mass Allocation Budget",
+      "category": "tables",
+      "discipline": "engineering",
+      "engine": "latex-booktabs",
+      "tags": [
+        "manufacturing",
+        "bom",
+        "mass-budget",
+        "weight"
+      ],
+      "relative_path": "tables/tbl.engineering.manufacturing.bom_mass_breakdown.v1.json"
+    },
+    {
+      "id": "tbl.engineering.reliability.mtbf_failure_modes.v1",
+      "version": "1.0.0",
+      "name": "Subsystem Mean Time Between Failures and FMEA Criticality",
+      "category": "tables",
+      "discipline": "engineering",
+      "engine": "latex-booktabs",
+      "tags": [
+        "fmea",
+        "mtbf",
+        "reliability",
+        "failure-modes"
+      ],
+      "relative_path": "tables/tbl.engineering.reliability.mtbf_failure_modes.v1.json"
+    },
+    {
+      "id": "tbl.engineering.structures.load_capacities.v1",
+      "version": "1.0.0",
+      "name": "Structural Member Load Capacities and Safety Margins",
+      "category": "tables",
+      "discipline": "engineering",
+      "engine": "latex-booktabs",
+      "tags": [
+        "structures",
+        "load-capacity",
+        "safety-margin",
+        "mechanics"
+      ],
+      "relative_path": "tables/tbl.engineering.structures.load_capacities.v1.json"
+    },
+    {
+      "id": "tbl.engineering.telecom.snr_test_matrix.v1",
+      "version": "1.0.0",
+      "name": "Signal-to-Noise Ratio and Bit Error Rate Test Matrix",
+      "category": "tables",
+      "discipline": "engineering",
+      "engine": "latex-booktabs",
+      "tags": [
+        "telecom",
+        "snr",
+        "ber",
+        "qam",
+        "modulation"
+      ],
+      "relative_path": "tables/tbl.engineering.telecom.snr_test_matrix.v1.json"
+    },
+    {
+      "id": "tbl.medicine.clinical.demographics_table1.v1",
+      "version": "1.0.0",
+      "name": "Demographic and Baseline Clinical Cohort Characteristics (Table 1)",
+      "category": "tables",
+      "discipline": "medicine",
+      "engine": "latex-booktabs",
+      "tags": [
+        "clinical-trial",
+        "demographics",
+        "consort",
+        "baseline",
+        "table-1"
+      ],
+      "relative_path": "tables/tbl.medicine.clinical.demographics_table1.v1.json"
+    },
+    {
+      "id": "tbl.medicine.diagnostic.sensitivity_specificity.v1",
+      "version": "1.0.0",
+      "name": "Diagnostic Accuracy Metrics and Predictive Values",
+      "category": "tables",
+      "discipline": "medicine",
+      "engine": "latex-booktabs",
+      "tags": [
+        "diagnostics",
+        "sensitivity",
+        "specificity",
+        "ppv",
+        "npv"
+      ],
+      "relative_path": "tables/tbl.medicine.diagnostic.sensitivity_specificity.v1.json"
+    },
+    {
+      "id": "tbl.medicine.pharma.pharmacokinetic_params.v1",
+      "version": "1.0.0",
+      "name": "Non-Compartmental Pharmacokinetic Parameters Across Dose Cohorts",
+      "category": "tables",
+      "discipline": "medicine",
+      "engine": "latex-booktabs",
+      "tags": [
+        "pharmacokinetics",
+        "cmax",
+        "auc",
+        "clearance",
+        "half-life"
+      ],
+      "relative_path": "tables/tbl.medicine.pharma.pharmacokinetic_params.v1.json"
+    },
+    {
+      "id": "tbl.medicine.safety.adverse_events.v1",
+      "version": "1.0.0",
+      "name": "Treatment-Emergent Adverse Events Stratified by Severity Grade",
+      "category": "tables",
+      "discipline": "medicine",
+      "engine": "latex-booktabs",
+      "tags": [
+        "safety",
+        "adverse-events",
+        "toxicology",
+        "clinical-trial"
+      ],
+      "relative_path": "tables/tbl.medicine.safety.adverse_events.v1.json"
+    },
+    {
+      "id": "tbl.medicine.trials.outcome_comparison.v1",
+      "version": "1.0.0",
+      "name": "Efficacy Primary and Secondary Endpoint Trial Comparison",
+      "category": "tables",
+      "discipline": "medicine",
+      "engine": "latex-booktabs",
+      "tags": [
+        "clinical-trial",
+        "endpoints",
+        "efficacy",
+        "difference"
+      ],
+      "relative_path": "tables/tbl.medicine.trials.outcome_comparison.v1.json"
+    },
+    {
+      "id": "tbl.physics.materials.physical_properties.v1",
+      "version": "1.0.0",
+      "name": "Synthesized Alloy Physical Properties and Uncertainty Limits",
+      "category": "tables",
+      "discipline": "physics",
+      "engine": "latex-booktabs",
+      "tags": [
+        "materials",
+        "density",
+        "modulus",
+        "conductivity",
+        "uncertainty"
+      ],
+      "relative_path": "tables/tbl.physics.materials.physical_properties.v1.json"
+    },
+    {
+      "id": "tbl.physics.scaling.dimensional_exponents.v1",
+      "version": "1.0.0",
+      "name": "Dimensional Analysis and Empirical Scaling Exponents",
+      "category": "tables",
+      "discipline": "physics",
+      "engine": "latex-booktabs",
+      "tags": [
+        "dimensional-analysis",
+        "scaling",
+        "buckingham-pi",
+        "hydrodynamics"
+      ],
+      "relative_path": "tables/tbl.physics.scaling.dimensional_exponents.v1.json"
+    },
+    {
+      "id": "tbl.physics.sensors.calibration_runs.v1",
+      "version": "1.0.0",
+      "name": "Sensor Calibration Multi-Point Verification Runs",
+      "category": "tables",
+      "discipline": "physics",
+      "engine": "latex-booktabs",
+      "tags": [
+        "calibration",
+        "sensors",
+        "residual",
+        "linearity"
+      ],
+      "relative_path": "tables/tbl.physics.sensors.calibration_runs.v1.json"
+    },
+    {
+      "id": "tbl.physics.thermo.equilibrium_constants.v1",
+      "version": "1.0.0",
+      "name": "Standard Thermodynamic State Functions and Equilibrium Constants",
+      "category": "tables",
+      "discipline": "physics",
+      "engine": "latex-booktabs",
+      "tags": [
+        "thermodynamics",
+        "enthalpy",
+        "entropy",
+        "equilibrium"
+      ],
+      "relative_path": "tables/tbl.physics.thermo.equilibrium_constants.v1.json"
+    },
+    {
+      "id": "tbl.physics.uncertainty.error_budget.v1",
+      "version": "1.0.0",
+      "name": "Metrological Uncertainty Budget and Variance Decomposition",
+      "category": "tables",
+      "discipline": "physics",
+      "engine": "latex-booktabs",
+      "tags": [
+        "uncertainty",
+        "error-budget",
+        "metrology",
+        "variance"
+      ],
+      "relative_path": "tables/tbl.physics.uncertainty.error_budget.v1.json"
+    }
+  ]
+}

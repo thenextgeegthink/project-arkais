@@ -1,0 +1,46 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.engineering.structures.load_capacities.v1",
+  "version": "1.0.0",
+  "name": "Structural Member Load Capacities and Safety Margins",
+  "description": "Yield stress limits, allowable design loads, and safety margin factors.",
+  "category": "tables",
+  "discipline": "engineering",
+  "tags": [
+    "structures",
+    "load-capacity",
+    "safety-margin",
+    "mechanics"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-1165",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The critical spar preserves a positive margin of safety $\\text{{MS}} = +{safety_margin}$ ({tbl_ref}) under 150% limit loads.",
+    "required_metrics": [
+      "safety_margin"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Margin of Safety defined as $\\text{MS} = (\\text{Allowable} / \\text{Applied}) - 1$.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Structural Member} & \\textbf{Design Load (kN)} & \\textbf{Allowable Limit (kN)} & \\textbf{Margin of Safety} & \\textbf{Status} \\\\\n\\midrule\nMain Wing Spar & $48.5$ & $72.8$ & $+0.50$ & Safe \\\\\nFuselage Bulkhead & $32.0$ & $41.6$ & $+0.30$ & Safe \\\\\nLanding Gear Strut & $65.0$ & $84.5$ & $+0.30$ & Safe \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "member": "Spar",
+      "load": 48.5,
+      "limit": 72.8,
+      "ms": "+0.50",
+      "status": "Safe"
+    },
+    {
+      "member": "Bulkhead",
+      "load": 32.0,
+      "limit": 41.6,
+      "ms": "+0.30",
+      "status": "Safe"
+    }
+  ]
+}

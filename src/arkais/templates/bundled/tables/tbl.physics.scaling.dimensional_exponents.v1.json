@@ -1,0 +1,46 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.physics.scaling.dimensional_exponents.v1",
+  "version": "1.0.0",
+  "name": "Dimensional Analysis and Empirical Scaling Exponents",
+  "description": "Buckingham Pi scaling parameters across hydrodynamic regimes.",
+  "category": "tables",
+  "discipline": "physics",
+  "tags": [
+    "dimensional-analysis",
+    "scaling",
+    "buckingham-pi",
+    "hydrodynamics"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-490",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The power dissipation scales with Reynolds number according to exponent $\\gamma = {scaling_exponent}$ ({tbl_ref}).",
+    "required_metrics": [
+      "scaling_exponent"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Fundamental dimensions: Mass $[M]$, Length $[L]$, Time $[T]$.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Dimensionless Group} & \\textbf{Definition} & \\textbf{Scaling Exponent} & \\textbf{Empirical Fit} & \\textbf{$R^2$} \\\\\n\\midrule\nReynolds Number ($Re$) & $\\rho v L / \\mu$ & $1.00$ & $0.998 \\pm 0.005$ & $0.999$ \\\\\nPrandtl Number ($Pr$) & $c_p \\mu / k$ & $0.33$ & $0.334 \\pm 0.008$ & $0.994$ \\\\\nNusselt Number ($Nu$) & $h L / k$ & $0.80$ & $0.792 \\pm 0.012$ & $0.988$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "group": "Reynolds",
+      "def": "rho v L / mu",
+      "exp": "1.00",
+      "fit": "0.998",
+      "r2": "0.999"
+    },
+    {
+      "group": "Nusselt",
+      "def": "h L / k",
+      "exp": "0.80",
+      "fit": "0.792",
+      "r2": "0.988"
+    }
+  ]
+}

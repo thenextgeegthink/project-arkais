@@ -1,0 +1,46 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.physics.thermo.equilibrium_constants.v1",
+  "version": "1.0.0",
+  "name": "Standard Thermodynamic State Functions and Equilibrium Constants",
+  "description": "Standard enthalpy, entropy, Gibbs energy, and equilibrium constants.",
+  "category": "tables",
+  "discipline": "physics",
+  "tags": [
+    "thermodynamics",
+    "enthalpy",
+    "entropy",
+    "equilibrium"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-390",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The catalytic pathway achieves exergonic spontaneity with $\\Delta G^\\circ = {delta_g}$ kJ/mol ({tbl_ref}).",
+    "required_metrics": [
+      "delta_g"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Values evaluated at standard state (298.15 K, 100 kPa).",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Reaction Species} & $\\Delta H^\\circ$ (kJ/mol) & $S^\\circ$ (J/mol$\\cdot$K) & $\\Delta G^\\circ$ (kJ/mol) & $\\ln K_{\\text{eq}}$ \\\\\n\\midrule\nCompound $\\alpha$ & $-124.5$ & $186.2$ & $-98.4$ & $39.7$ \\\\\nCompound $\\beta$ & $-84.1$ & $214.0$ & $-62.1$ & $25.1$ \\\\\nCompound $\\gamma$ & $-210.8$ & $142.5$ & $-178.2$ & $71.9$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "species": "Alpha",
+      "dh": -124.5,
+      "s": 186.2,
+      "dg": -98.4,
+      "ln_k": 39.7
+    },
+    {
+      "species": "Beta",
+      "dh": -84.1,
+      "s": 214.0,
+      "dg": -62.1,
+      "ln_k": 25.1
+    }
+  ]
+}

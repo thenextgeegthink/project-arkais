@@ -1,0 +1,90 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.cs.latency.distribution_histogram.v1",
+  "version": "1.0.0",
+  "name": "Tail Latency Histogram with Percentile Demarcations",
+  "description": "Binned execution latency distribution highlighting P50, P90, and P99 tail SLA boundaries.",
+  "category": "figures",
+  "discipline": "computer_science",
+  "tags": [
+    "latency",
+    "sla",
+    "tail-latency",
+    "histogram",
+    "systems"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-088",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "The observed execution profile demonstrates tight tail bounds, with 99% of requests completing within {p99_ms} ms ({fig_ref}).",
+    "required_metrics": [
+      "p99_ms"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Frequency distribution across 100,000 asynchronous RPC executions.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "bin": {
+          "maxbins": 15
+        },
+        "field": "latency_ms",
+        "type": "quantitative",
+        "title": "Latency (ms)"
+      },
+      "y": {
+        "aggregate": "count",
+        "type": "quantitative",
+        "title": "Request Count"
+      },
+      "color": {
+        "value": "#4f46e5"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "latency_ms": 12.1
+    },
+    {
+      "latency_ms": 14.3
+    },
+    {
+      "latency_ms": 15.0
+    },
+    {
+      "latency_ms": 16.2
+    },
+    {
+      "latency_ms": 18.5
+    },
+    {
+      "latency_ms": 22.4
+    },
+    {
+      "latency_ms": 25.1
+    },
+    {
+      "latency_ms": 28.9
+    },
+    {
+      "latency_ms": 34.0
+    },
+    {
+      "latency_ms": 42.1
+    },
+    {
+      "latency_ms": 15.4
+    },
+    {
+      "latency_ms": 17.8
+    }
+  ]
+}

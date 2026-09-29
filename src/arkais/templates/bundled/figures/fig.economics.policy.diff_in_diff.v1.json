@@ -1,0 +1,104 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.economics.policy.diff_in_diff.v1",
+  "version": "1.0.0",
+  "name": "Difference-in-Differences Parallel Trends and Treatment Divergence",
+  "description": "Pre-treatment parallel trends trajectory and post-intervention causal divergence.",
+  "category": "figures",
+  "discipline": "economics",
+  "tags": [
+    "diff-in-diff",
+    "econometrics",
+    "causal-inference",
+    "policy"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-765",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "Following reform implementation, treated regions experienced an incremental {effect_pct}% employment expansion relative to synthetic controls ({fig_ref}).",
+    "required_metrics": [
+      "effect_pct"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Dashed vertical divider indicates policy adoption at $t=0$.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": {
+      "type": "line",
+      "point": true
+    },
+    "encoding": {
+      "x": {
+        "field": "year",
+        "type": "quantitative",
+        "title": "Year Relative to Treatment"
+      },
+      "y": {
+        "field": "employment_index",
+        "type": "quantitative",
+        "title": "Employment Index (100 = Baseline)"
+      },
+      "color": {
+        "field": "cohort",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "year": -3,
+      "employment_index": 98,
+      "cohort": "Treatment"
+    },
+    {
+      "year": -2,
+      "employment_index": 99,
+      "cohort": "Treatment"
+    },
+    {
+      "year": -1,
+      "employment_index": 100,
+      "cohort": "Treatment"
+    },
+    {
+      "year": 0,
+      "employment_index": 105,
+      "cohort": "Treatment"
+    },
+    {
+      "year": 1,
+      "employment_index": 112,
+      "cohort": "Treatment"
+    },
+    {
+      "year": -3,
+      "employment_index": 97,
+      "cohort": "Control"
+    },
+    {
+      "year": -2,
+      "employment_index": 98,
+      "cohort": "Control"
+    },
+    {
+      "year": -1,
+      "employment_index": 100,
+      "cohort": "Control"
+    },
+    {
+      "year": 0,
+      "employment_index": 101,
+      "cohort": "Control"
+    },
+    {
+      "year": 1,
+      "employment_index": 102,
+      "cohort": "Control"
+    }
+  ]
+}

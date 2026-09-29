@@ -1,0 +1,45 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.medicine.clinical.demographics_table1.v1",
+  "version": "1.0.0",
+  "name": "Demographic and Baseline Clinical Cohort Characteristics (Table 1)",
+  "description": "Standard CONSORT Table 1 displaying baseline cohort distributions with statistical balance tests.",
+  "category": "tables",
+  "discipline": "medicine",
+  "tags": [
+    "clinical-trial",
+    "demographics",
+    "consort",
+    "baseline",
+    "table-1"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-640",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "Randomization yielded balanced baseline cohorts with mean participant age of {mean_age} years ({tbl_ref}, $p = 0.68$).",
+    "required_metrics": [
+      "mean_age"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Values presented as mean $\\pm$ SD or count (percentage).",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lccc}\n\\toprule\n\\textbf{Baseline Characteristic} & \\textbf{Experimental ($N=150$)} & \\textbf{Control ($N=150$)} & \\textbf{$p$-value} \\\\\n\\midrule\nAge (years), Mean $\\pm$ SD & $58.4 \\pm 8.2$ & $57.9 \\pm 8.6$ & $0.62$ \\\\\nFemale Sex, $n$ (\\%) & $72$ ($48.0\\%$) & $74$ ($49.3\\%$) & $0.82$ \\\\\nBMI (kg/m$^2$) & $26.4 \\pm 3.1$ & $26.1 \\pm 3.4$ & $0.45$ \\\\\nHypertension History, $n$ (\\%) & $45$ ($30.0\\%$) & $48$ ($32.0\\%$) & $0.71$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "char": "Age",
+      "exp": "58.4",
+      "ctrl": "57.9",
+      "p": "0.62"
+    },
+    {
+      "char": "Female",
+      "exp": "72 (48%)",
+      "ctrl": "74 (49%)",
+      "p": "0.82"
+    }
+  ]
+}

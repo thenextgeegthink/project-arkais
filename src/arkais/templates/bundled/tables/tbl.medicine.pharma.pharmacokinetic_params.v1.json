@@ -1,0 +1,48 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.medicine.pharma.pharmacokinetic_params.v1",
+  "version": "1.0.0",
+  "name": "Non-Compartmental Pharmacokinetic Parameters Across Dose Cohorts",
+  "description": "Peak concentration (Cmax), AUC, half-life, and oral clearance across ascending doses.",
+  "category": "tables",
+  "discipline": "medicine",
+  "tags": [
+    "pharmacokinetics",
+    "cmax",
+    "auc",
+    "clearance",
+    "half-life"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-715",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "Single-dose administration yielded peak plasma concentration $C_{{\\text{{max}}}} = {c_max}$ ng/mL with elimination half-life of {t_half} h ({tbl_ref}).",
+    "required_metrics": [
+      "c_max",
+      "t_half"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Geometric mean (coefficient of variation %) reported.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Dose Cohort} & $C_{\\text{max}}$ (ng/mL) & $T_{\\text{max}}$ (h) & $\\text{AUC}_{0-\\infty}$ (ng$\\cdot$h/mL) & $t_{1/2}$ (h) \\\\\n\\midrule\n10 mg & $48.2$ ($18\\%$) & $1.5$ & $242.0$ ($16\\%$) & $6.4$ ($12\\%$) \\\\\n25 mg & $124.5$ ($14\\%$) & $1.5$ & $615.2$ ($15\\%$) & $6.2$ ($11\\%$) \\\\\n50 mg & $254.1$ ($19\\%$) & $2.0$ & $1280.4$ ($18\\%$) & $6.5$ ($14\\%$) \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "dose": "10 mg",
+      "cmax": 48.2,
+      "tmax": 1.5,
+      "auc": 242.0,
+      "thalf": 6.4
+    },
+    {
+      "dose": "50 mg",
+      "cmax": 254.1,
+      "tmax": 2.0,
+      "auc": 1280.4,
+      "thalf": 6.5
+    }
+  ]
+}
