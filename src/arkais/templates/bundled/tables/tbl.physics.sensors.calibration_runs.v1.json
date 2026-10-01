@@ -1,0 +1,46 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.physics.sensors.calibration_runs.v1",
+  "version": "1.0.0",
+  "name": "Sensor Calibration Multi-Point Verification Runs",
+  "description": "Nominal reference vs empirical readings, residual bias, and linearity metrics.",
+  "category": "tables",
+  "discipline": "physics",
+  "tags": [
+    "calibration",
+    "sensors",
+    "residual",
+    "linearity"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-440",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "Calibration residual errors remain tightly constrained, not exceeding {max_residual_pct}% of full-scale output ({tbl_ref}).",
+    "required_metrics": [
+      "max_residual_pct"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. NIST traceable deadweight calibration protocol.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Channel ID} & \\textbf{Reference Input (mV)} & \\textbf{Measured Mean (mV)} & \\textbf{Residual ($\\mu$V)} & \\textbf{Linearity (\\%FS)} \\\\\n\\midrule\nCH-01 & $10.000$ & $10.002$ & $+2.0$ & $0.004$ \\\\\nCH-02 & $50.000$ & $49.997$ & $-3.0$ & $0.006$ \\\\\nCH-03 & $100.000$ & $100.004$ & $+4.0$ & $0.008$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "ch": "CH-01",
+      "ref": 10.0,
+      "mean": 10.002,
+      "res": 2.0,
+      "lin": 0.004
+    },
+    {
+      "ch": "CH-02",
+      "ref": 50.0,
+      "mean": 49.997,
+      "res": -3.0,
+      "lin": 0.006
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.cs.profiling.resource_utilization.v1",
+  "version": "1.0.0",
+  "name": "Hardware Resource Allocation and Compute Profile",
+  "description": "System resource utilization measuring CPU cores, GPU VRAM, and thermal wattage.",
+  "category": "tables",
+  "discipline": "computer_science",
+  "tags": [
+    "hardware",
+    "profiling",
+    "vram",
+    "compute",
+    "energy"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-215",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The optimized pipeline limits peak accelerator allocation to {vram_gb} GB VRAM ({tbl_ref}), representing a 42% memory reduction.",
+    "required_metrics": [
+      "vram_gb"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Measurements recorded under continuous sustained inference at batch size 32.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Execution Stage} & \\textbf{CPU Cores} & \\textbf{Host RAM (GB)} & \\textbf{VRAM (GB)} & \\textbf{Power (W)} \\\\\n\\midrule\nTokenizer Preprocessing & 8.2 & 14.2 & 0.0 & 65 \\\\\nEmbedding & 2.1 & 8.4 & 4.2 & 120 \\\\\nTransformer Backbone & 4.0 & 6.1 & 28.5 & 340 \\\\\nSampling Engine & 6.4 & 9.2 & 3.1 & 95 \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "stage": "Tokenizer",
+      "cpu": 8.2,
+      "ram_gb": 14.2,
+      "vram_gb": 0.0,
+      "power_w": 65
+    },
+    {
+      "stage": "Transformer",
+      "cpu": 4.0,
+      "ram_gb": 6.1,
+      "vram_gb": 28.5,
+      "power_w": 340
+    }
+  ]
+}

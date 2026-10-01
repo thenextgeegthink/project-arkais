@@ -1,0 +1,76 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.engineering.signal.roc_auc_curve.v1",
+  "version": "1.0.0",
+  "name": "Receiver Operating Characteristic (ROC) with Area Under Curve",
+  "description": "True positive rate versus false positive rate trade-off curve across classification thresholds.",
+  "category": "figures",
+  "discipline": "engineering",
+  "tags": [
+    "roc",
+    "auc",
+    "signal-detection",
+    "classification"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-1065",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "The signal classifier delivers discriminatory efficacy with an area under the curve $\\text{{AUC}} = {auc_score}$ ({fig_ref}).",
+    "required_metrics": [
+      "auc_score"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Diagonal dotted reference marks random chance (AUC = 0.50).",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "fpr",
+        "type": "quantitative",
+        "title": "False Positive Rate (1 - Specificity)"
+      },
+      "y": {
+        "field": "tpr",
+        "type": "quantitative",
+        "title": "True Positive Rate (Sensitivity)"
+      },
+      "color": {
+        "field": "classifier",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "fpr": 0.0,
+      "tpr": 0.0,
+      "classifier": "Arkais-Detector"
+    },
+    {
+      "fpr": 0.02,
+      "tpr": 0.82,
+      "classifier": "Arkais-Detector"
+    },
+    {
+      "fpr": 0.05,
+      "tpr": 0.94,
+      "classifier": "Arkais-Detector"
+    },
+    {
+      "fpr": 0.15,
+      "tpr": 0.98,
+      "classifier": "Arkais-Detector"
+    },
+    {
+      "fpr": 1.0,
+      "tpr": 1.0,
+      "classifier": "Arkais-Detector"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.cs.datasets.partition_splits.v1",
+  "version": "1.0.0",
+  "name": "Corpus Partition Splits and Vocabulary Statistics",
+  "description": "Corpus demographic partitioning detailing sample numbers, word counts, and token counts.",
+  "category": "tables",
+  "discipline": "computer_science",
+  "tags": [
+    "dataset",
+    "corpus",
+    "partitions",
+    "split"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-265",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The clean training partition comprises {train_samples} documents spanning {total_tokens} million tokens ({tbl_ref}).",
+    "required_metrics": [
+      "train_samples",
+      "total_tokens"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Partitioning maintains strict cross-validation isolation with no overlapping document IDs.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Partition Split} & \\textbf{Document Count} & \\textbf{Mean Length} & \\textbf{Total Tokens (M)} & \\textbf{Proportion} \\\\\n\\midrule\nTraining & 1,480,000 & 421 & 623.1 & 80\\% \\\\\nValidation & 185,000 & 418 & 77.3 & 10\\% \\\\\nTest & 185,000 & 428 & 79.3 & 10\\% \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "split": "Training",
+      "docs": 1480000,
+      "mean_len": 421,
+      "tokens_m": 623.1,
+      "pct": "80%"
+    },
+    {
+      "split": "Validation",
+      "docs": 185000,
+      "mean_len": 418,
+      "tokens_m": 77.3,
+      "pct": "10%"
+    }
+  ]
+}

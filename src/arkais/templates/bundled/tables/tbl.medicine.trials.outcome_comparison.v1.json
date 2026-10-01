@@ -1,0 +1,41 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.medicine.trials.outcome_comparison.v1",
+  "version": "1.0.0",
+  "name": "Efficacy Primary and Secondary Endpoint Trial Comparison",
+  "description": "Baseline vs endpoint delta comparisons with absolute treatment effects.",
+  "category": "tables",
+  "discipline": "medicine",
+  "tags": [
+    "clinical-trial",
+    "endpoints",
+    "efficacy",
+    "difference"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-690",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The primary outcome demonstrated a significant reduction of {endpoint_delta} points ({tbl_ref}, 95% CI: [{ci_min}, {ci_max}]).",
+    "required_metrics": [
+      "endpoint_delta",
+      "ci_min",
+      "ci_max"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Intention-to-treat population analyzed with mixed-model repeated measures.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Clinical Endpoint} & \\textbf{Active Drug} & \\textbf{Placebo} & \\textbf{Difference (95\\% CI)} & \\textbf{$p$-value} \\\\\n\\midrule\nPrimary Endpoint (pts) & $-18.4 \\pm 3.2$ & $-6.1 \\pm 3.5$ & $-12.3$ [$-14.2, -10.4$] & $<0.001$ \\\\\nSecondary Biomarker (mg/dL) & $-42.1 \\pm 6.8$ & $-10.2 \\pm 7.1$ & $-31.9$ [$-38.4, -25.4$] & $<0.001$ \\\\\nQuality of Life Score & $+14.2 \\pm 2.8$ & $+4.0 \\pm 3.1$ & $+10.2$ [$+7.8, +12.6$] & $<0.001$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "endpoint": "Primary",
+      "active": "-18.4",
+      "placebo": "-6.1",
+      "diff": "-12.3",
+      "p": "<0.001"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "signature_id": "ARKAIS-v3.0",
+  "version": "3.0",
+  "metadata": {
+    "created_at": "2026-10-01T02:28:04.258657+00:00",
+    "governance": "ADR-006 / Decision D1, D3",
+    "manifest_hash": "ff5f30d73f97ceab8f1f25dcbf8fdea34620edea45cc80c09e30e3f96956dfbc",
+    "holdout_isolated": true,
+    "calibration_papers": 8998,
+    "calibration_windows": 117083
+  },
+  "core": {
+    "invariants": {
+      "lexical_tripwires": [
+        "delve",
+        "tapestry",
+        "revolutionize",
+        "testament",
+        "multifaceted",
+        "pivotal",
+        "game-changing",
+        "paramount",
+        "beacon",
+        "plethora",
+        "interplay",
+        "cornerstone",
+        "synergy",
+        "orchestrate",
+        "foster",
+        "seamlessly",
+        "holistic",
+        "cutting-edge"
+      ],
+      "banned_openers": [
+        "^(moreover|furthermore|additionally|in conclusion|to conclude|in summary|importantly),",
+        "^(firstly|secondly|thirdly|lastly),",
+        "^(it is worth noting|it is important to note)"
+      ],
+      "structural_bans": {
+        "prose_only": true,
+        "compulsive_summaries_banned": true,
+        "pedagogical_glosses_banned": true
+      },
+      "synthetic_contrast": {
+        "zero_tolerance": true,
+        "pattern_families": [
+          "is not X, it is Y",
+          "not X, but Y",
+          "X, not Y",
+          "not merely X but Y"
+        ]
+      },
+      "patronizing_analogies": {
+        "zero_tolerance": true
+      }
+    },
+    "bands": {
+      "sentence_cadence": {
+        "mean_range": [
+          20.5,
+          44.1
+        ],
+        "sigma_tolerance_range": [
+          8.5,
+          55.6
+        ],
+        "target_median": 16.1,
+        "target_iqr": [
+          11.8,
+          24.7
+        ],
+        "elasticity_min": 2.2
+      },
+      "nominalization_density": {
+        "tolerance_range": [
+          0.8,
+          8.7
+        ],
+        "target_median": 5.1,
+        "target_iqr": [
+          3.8,
+          6.5
+        ]
+      },
+      "epistemic_balance": {
+        "hedge_ratio_floor": 0.0,
+        "target_median": 2.0,
+        "target_iqr": [
+          1.0,
+          4.0
+        ]
+      },
+      "citation_density": {
+        "min_per_1000_words": 0.0
+      }
+    }
+  },
+  "profiles": {
+    "stem": {
+      "stratum": "STEM",
+      "provenance": {
+        "papers_analyzed": 7764,
+        "windows_analyzed": 98538,
+        "bootstrap_replicates": 1000
+      },
+      "numeric_overrides": {
+        "epistemic_balance": {
+          "hedge_ratio_floor": 0.0,
+          "target_median": 2.0
+        },
+        "sentence_cadence": {
+          "sigma_tolerance_range": [
+            7.9,
+            40.6
+          ]
+        }
+      }
+    },
+    "social": {
+      "stratum": "Social Sciences",
+      "provenance": {
+        "papers_analyzed": 1222,
+        "windows_analyzed": 18392,
+        "bootstrap_replicates": 1000
+      },
+      "numeric_overrides": {
+        "sentence_cadence": {
+          "sigma_tolerance_range": [
+            8.4,
+            53.6
+          ]
+        },
+        "nominalization_density": {
+          "tolerance_range": [
+            0.2,
+            9.0
+          ]
+        }
+      }
+    },
+    "humanities": {
+      "stratum": "Humanities",
+      "provenance": {
+        "papers_analyzed": 12,
+        "windows_analyzed": 153,
+        "bootstrap_replicates": 1000
+      },
+      "numeric_overrides": {
+        "sentence_cadence": {
+          "mean_range": [
+            22.8,
+            51.6
+          ]
+        }
+      }
+    }
+  }
+}

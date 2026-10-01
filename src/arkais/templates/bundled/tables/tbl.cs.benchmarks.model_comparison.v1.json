@@ -1,0 +1,56 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.cs.benchmarks.model_comparison.v1",
+  "version": "1.0.0",
+  "name": "Transformer Architecture Latency and Throughput Matrix",
+  "description": "Publication-grade booktabs comparison table evaluating inference latency and generation throughput across batch configurations.",
+  "category": "tables",
+  "discipline": "computer_science",
+  "tags": [
+    "benchmarks",
+    "llm",
+    "latency",
+    "throughput",
+    "booktabs"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-105",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "Under equivalent batch constraints, the quantized variant reduces inference latency from {baseline_ms} ms to {optimized_ms} ms ({tbl_ref}) without measurable perplexity degradation.",
+    "required_metrics": [
+      "baseline_ms",
+      "optimized_ms"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Evaluation conducted across 1,000 warm-start queries on an NVIDIA A100-SXM4-80GB accelerator.",
+  "notes": "* p < 0.05 against dense baseline architecture via Welch's two-tailed t-test.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Model Architecture} & \\textbf{Active Params} & \\textbf{P50 (ms)} & \\textbf{P99 (ms)} & \\textbf{Throughput (tok/s)} \\\\\n\\midrule\nDense-7B & 7.1B & 18.2 & 34.5 & 124.2 \\\\\nMoE-8x7B (Top-2) & 12.8B & 14.1 & 26.8 & 168.4 \\\\\nQuantized-4bit-7B & 7.1B & 11.5 & 21.0 & 210.5 \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "model": "Dense-7B",
+      "active_params": "7.1B",
+      "p50_ms": 18.2,
+      "p99_ms": 34.5,
+      "tokens_sec": 124.2
+    },
+    {
+      "model": "MoE-8x7B (Top-2)",
+      "active_params": "12.8B",
+      "p50_ms": 14.1,
+      "p99_ms": 26.8,
+      "tokens_sec": 168.4
+    },
+    {
+      "model": "Quantized-4bit-7B",
+      "active_params": "7.1B",
+      "p50_ms": 11.5,
+      "p99_ms": 21.0,
+      "tokens_sec": 210.5
+    }
+  ]
+}
