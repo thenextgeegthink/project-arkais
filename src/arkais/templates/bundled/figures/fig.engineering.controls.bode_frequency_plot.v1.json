@@ -1,0 +1,80 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.engineering.controls.bode_frequency_plot.v1",
+  "version": "1.0.0",
+  "name": "Bode Frequency Response Magnitude and Phase Diagram",
+  "description": "Frequency domain open-loop transfer function magnitude (dB) and phase margin.",
+  "category": "figures",
+  "discipline": "engineering",
+  "tags": [
+    "bode-plot",
+    "control-systems",
+    "phase-margin",
+    "frequency-response"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-1015",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "The compensated feedback loop exhibits a robust gain margin of {gain_margin_db} dB and phase margin of {phase_margin_deg} degrees ({fig_ref}).",
+    "required_metrics": [
+      "gain_margin_db",
+      "phase_margin_deg"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Evaluated between 0.1 rad/s and 10,000 rad/s.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "frequency_rad_s",
+        "type": "quantitative",
+        "title": "Frequency (rad/s)",
+        "scale": {
+          "type": "log"
+        }
+      },
+      "y": {
+        "field": "magnitude_db",
+        "type": "quantitative",
+        "title": "Magnitude (dB)"
+      },
+      "color": {
+        "field": "loop",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "frequency_rad_s": 0.1,
+      "magnitude_db": 38.2,
+      "loop": "Compensated"
+    },
+    {
+      "frequency_rad_s": 1.0,
+      "magnitude_db": 20.4,
+      "loop": "Compensated"
+    },
+    {
+      "frequency_rad_s": 10.0,
+      "magnitude_db": 0.0,
+      "loop": "Compensated"
+    },
+    {
+      "frequency_rad_s": 100.0,
+      "magnitude_db": -24.5,
+      "loop": "Compensated"
+    },
+    {
+      "frequency_rad_s": 1000.0,
+      "magnitude_db": -48.1,
+      "loop": "Compensated"
+    }
+  ]
+}

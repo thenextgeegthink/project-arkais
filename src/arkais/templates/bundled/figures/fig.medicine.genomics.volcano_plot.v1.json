@@ -1,0 +1,74 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.medicine.genomics.volcano_plot.v1",
+  "version": "1.0.0",
+  "name": "Transcriptomic Volcano Plot with Significance Thresholds",
+  "description": "Log2 fold change versus negative log10 statistical p-value for differential gene expression.",
+  "category": "figures",
+  "discipline": "medicine",
+  "tags": [
+    "genomics",
+    "volcano-plot",
+    "differential-expression",
+    "rna-seq"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-590",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "Differential transcriptomic profiling identified {upregulated_genes} significantly upregulated genes surpassing FDR $< 0.01$ ({fig_ref}).",
+    "required_metrics": [
+      "upregulated_genes"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Horizontal line marks $p=0.01$; vertical boundaries mark 2-fold change thresholds.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": {
+      "type": "circle",
+      "size": 50
+    },
+    "encoding": {
+      "x": {
+        "field": "log2_fc",
+        "type": "quantitative",
+        "title": "Effect Size (log\u2082 Fold Change)"
+      },
+      "y": {
+        "field": "neg_log10_p",
+        "type": "quantitative",
+        "title": "-log\u2081\u2080(p-value)"
+      },
+      "color": {
+        "field": "regulation",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "log2_fc": 2.4,
+      "neg_log10_p": 4.8,
+      "regulation": "Upregulated"
+    },
+    {
+      "log2_fc": 1.8,
+      "neg_log10_p": 3.2,
+      "regulation": "Upregulated"
+    },
+    {
+      "log2_fc": -2.1,
+      "neg_log10_p": 5.1,
+      "regulation": "Downregulated"
+    },
+    {
+      "log2_fc": 0.2,
+      "neg_log10_p": 0.8,
+      "regulation": "Not Significant"
+    }
+  ]
+}

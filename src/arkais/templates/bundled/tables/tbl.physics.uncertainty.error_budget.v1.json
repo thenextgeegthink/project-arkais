@@ -1,0 +1,47 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.physics.uncertainty.error_budget.v1",
+  "version": "1.0.0",
+  "name": "Metrological Uncertainty Budget and Variance Decomposition",
+  "description": "Systematic and random uncertainty components with sensitivity coefficients.",
+  "category": "tables",
+  "discipline": "physics",
+  "tags": [
+    "uncertainty",
+    "error-budget",
+    "metrology",
+    "variance"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-465",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The combined expanded standard uncertainty is {combined_uncertainty} {units} ({tbl_ref}) with coverage factor $k=2$.",
+    "required_metrics": [
+      "combined_uncertainty",
+      "units"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Compiled according to the ISO/IEC Guide to the Expression of Uncertainty in Measurement (GUM).",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccr}\n\\toprule\n\\textbf{Uncertainty Source} & \\textbf{Type} & \\textbf{Standard Unc. $u_i$} & \\textbf{Sensitivity $c_i$} & \\textbf{Variance (\\%)} \\\\\n\\midrule\nSensor Nonlinearity & B & $0.12$ mV & $1.00$ & $34.2\\%$ \\\\\nThermal Drift & B & $0.08$ mV & $1.25$ & $23.8\\%$ \\\\\nQuantization Noise & B & $0.02$ mV & $1.00$ & $1.0\\%$ \\\\\nRepeatability & A & $0.13$ mV & $1.00$ & $41.0\\%$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "source": "Nonlinearity",
+      "type": "B",
+      "u_i": 0.12,
+      "c_i": 1.0,
+      "var_pct": "34.2%"
+    },
+    {
+      "source": "Repeatability",
+      "type": "A",
+      "u_i": 0.13,
+      "c_i": 1.0,
+      "var_pct": "41.0%"
+    }
+  ]
+}

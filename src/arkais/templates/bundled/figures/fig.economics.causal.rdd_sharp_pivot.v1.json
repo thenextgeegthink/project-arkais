@@ -1,0 +1,84 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.economics.causal.rdd_sharp_pivot.v1",
+  "version": "1.0.0",
+  "name": "Sharp Regression Discontinuity Threshold Discontinuity",
+  "description": "Binned scatter plot demonstrating causal discontinuity jump at cutoff margin.",
+  "category": "figures",
+  "discipline": "economics",
+  "tags": [
+    "rdd",
+    "causal-inference",
+    "threshold",
+    "discontinuity"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-840",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "The sharp discontinuity at eligibility cutoff zero reveals an immediate local treatment jump of {jump_val} points ({fig_ref}, $p < 0.01$).",
+    "required_metrics": [
+      "jump_val"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Fitted lines represent local linear regressions with triangular kernel bandwidth.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": {
+      "type": "point",
+      "filled": true
+    },
+    "encoding": {
+      "x": {
+        "field": "margin",
+        "type": "quantitative",
+        "title": "Normalized Score Margin"
+      },
+      "y": {
+        "field": "outcome",
+        "type": "quantitative",
+        "title": "Outcome Measure"
+      },
+      "color": {
+        "field": "status",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "margin": -15,
+      "outcome": 42.1,
+      "status": "Ineligible"
+    },
+    {
+      "margin": -10,
+      "outcome": 44.5,
+      "status": "Ineligible"
+    },
+    {
+      "margin": -2,
+      "outcome": 46.2,
+      "status": "Ineligible"
+    },
+    {
+      "margin": 1,
+      "outcome": 62.4,
+      "status": "Eligible"
+    },
+    {
+      "margin": 8,
+      "outcome": 65.1,
+      "status": "Eligible"
+    },
+    {
+      "margin": 14,
+      "outcome": 68.0,
+      "status": "Eligible"
+    }
+  ]
+}
