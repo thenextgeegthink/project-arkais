@@ -1,0 +1,2 @@
+import{s as e}from"./index-Y9fC_Q6D.js";import{t}from"./fields-lWCynIje.js";var n={article:`misc`,"article-journal":`article`,book:`book`,chapter:`incollection`,"paper-conference":`inproceedings`,thesis:`phdthesis`,webpage:`online`};function r(r){return r.map(r=>e({id:r.id,type:r.type,title:r.title,authors:r.author??[],year:t(r),containerTitle:r[`container-title`],volume:r.volume,issue:r.issue,page:r.page,DOI:r.DOI,publisher:r.publisher,URL:r.URL}).replace(/^@(\w+)\{/,`@${n[r.type]??`misc`}{`)).join(`
+`)}export{r as serialize};

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.economics.macro.irf_shocks.v1",
+  "version": "1.0.0",
+  "name": "Structural Vector Autoregression Impulse Response Function",
+  "description": "Macroeconomic dynamic response to an exogenous interest rate shock.",
+  "category": "figures",
+  "discipline": "economics",
+  "tags": [
+    "macroeconomics",
+    "irf",
+    "svar",
+    "monetary-policy"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-815",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "A 100-basis-point policy shock induces a peak output contraction of {peak_drop_pct}% at quarter {t_trough} ({fig_ref}).",
+    "required_metrics": [
+      "peak_drop_pct",
+      "t_trough"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Shaded envelopes encompass 90% Hall bootstrap confidence bands.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "quarters",
+        "type": "quantitative",
+        "title": "Quarters After Monetary Shock"
+      },
+      "y": {
+        "field": "irf_response",
+        "type": "quantitative",
+        "title": "GDP Deviation (%)"
+      },
+      "color": {
+        "field": "model",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "quarters": 0,
+      "irf_response": 0.0,
+      "model": "Baseline SVAR"
+    },
+    {
+      "quarters": 2,
+      "irf_response": -0.45,
+      "model": "Baseline SVAR"
+    },
+    {
+      "quarters": 4,
+      "irf_response": -0.85,
+      "model": "Baseline SVAR"
+    },
+    {
+      "quarters": 6,
+      "irf_response": -0.62,
+      "model": "Baseline SVAR"
+    },
+    {
+      "quarters": 8,
+      "irf_response": -0.21,
+      "model": "Baseline SVAR"
+    },
+    {
+      "quarters": 12,
+      "irf_response": -0.05,
+      "model": "Baseline SVAR"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.economics.econometrics.ols_2sls_regression.v1",
+  "version": "1.0.0",
+  "name": "OLS and Instrumental Variables (2SLS) Econometric Estimates",
+  "description": "Side-by-side econometric regression estimates with clustered standard errors.",
+  "category": "tables",
+  "discipline": "economics",
+  "tags": [
+    "econometrics",
+    "ols",
+    "2sls",
+    "instrumental-variables",
+    "regression"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-915",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "Instrumental variable 2SLS estimates indicate a causal elasticity of {elasticity} ({tbl_ref}, $p < 0.01$).",
+    "required_metrics": [
+      "elasticity"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Robust standard errors clustered at district level in parentheses. $^{*} p<0.05, ^{**} p<0.01$.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lccc}\n\\toprule\n\\textbf{Independent Variable} & \\textbf{OLS (1)} & \\textbf{OLS (2)} & \\textbf{2SLS (3)} \\\\\n\\midrule\nTreatment Exposure & $0.142^{**}$ ($0.038$) & $0.125^{**}$ ($0.035$) & $0.168^{**}$ ($0.048$) \\\\\nLog Capital & --- & $0.245^{**}$ ($0.042$) & $0.238^{**}$ ($0.044$) \\\\\nDistrict Fixed Effects & No & Yes & Yes \\\\\nFirst-Stage $F$-Stat & --- & --- & $34.2$ \\\\\n$R^2$ & $0.28$ & $0.41$ & $0.39$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "var": "Exposure",
+      "ols1": "0.142",
+      "ols2": "0.125",
+      "iv": "0.168"
+    }
+  ]
+}

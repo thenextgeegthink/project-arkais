@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "project-arkais"
+version = "3.0.0"
+description = "Deterministic academic prose signature engine and stylometric audit suite."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Proprietary" }
+authors = [
+    { name = "The Next Geek Think (NGT)", email = "engineering@geegthink.com" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Text Processing :: Linguistic"
+]
+dependencies = [
+    "pydantic>=2.0.0",
+    "jsonschema>=4.0.0"
+]
+
+[project.scripts]
+# `arkais` belongs to this package: it is the published public surface (`arkais audit`,
+# `arkais verify-doi`, `arkais verify-citation`, `arkais signatures`; see docs/public/quickstart.md
+# and packages/sdk/README.md).
+#
+# `arkais-cli` belongs to the repository-root corpus pipeline package. Both packages previously
+# declared both names, so the later install silently clobbered the other's console scripts.
+# See THE-115 / spec.md §7 D-3.
+arkais = "arkais.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.4.0",
+    "vl-convert-python>=1.6.0"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/arkais"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/README.md",
+    "/pyproject.toml"
+]

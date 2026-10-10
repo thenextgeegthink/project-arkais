@@ -1,0 +1,6 @@
+import{t as e}from"./fields-lWCynIje.js";import{n as t,r as n}from"./xml-Dz5JoLw0.js";var r={book:`Book`,chapter:`Chapter`},i=`
+           xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+           xmlns:dc="http://purl.org/dc/elements/1.1/"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd"`;function a(i,a){let o=``;o+=t(`dc:title`,i.title,a);for(let e of i.author??[]){let r=n(e);r&&(o+=t(`dc:creator`,r,a))}let s=e(i);return s!==void 0&&(o+=t(`dc:date`,String(s),a)),i.publisher&&(o+=t(`dc:publisher`,i.publisher,a)),i[`container-title`]&&(o+=t(`dc:source`,i[`container-title`],a)),i.DOI?o+=t(`dc:identifier`,`https://doi.org/${i.DOI}`,a):i.URL&&(o+=t(`dc:identifier`,i.URL,a)),o+=t(`dc:type`,r[i.type]??`Text`,a),i.note&&(o+=t(`dc:description`,i.note,a)),o}function o(e){let t=`<?xml version="1.0" encoding="UTF-8"?>
+`;return e.length===0?`${t}<oai_dc:dc${i}/>\n`:e.length===1?`${t}<oai_dc:dc${i}>\n${a(e[0],`  `)}</oai_dc:dc>\n`:`${t}<oai_dc:collection${i}>\n${e.map(e=>`  <oai_dc:dc>\n${a(e,`    `)}  </oai_dc:dc>\n`).join(``)}</oai_dc:collection>\n`}export{o as serialize};
