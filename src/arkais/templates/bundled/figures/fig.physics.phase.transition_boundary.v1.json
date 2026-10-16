@@ -1,0 +1,83 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.physics.phase.transition_boundary.v1",
+  "version": "1.0.0",
+  "name": "Thermodynamic Phase Boundary and Critical Point Locus",
+  "description": "Pressure-temperature phase transition boundary mapping coexistence curves.",
+  "category": "figures",
+  "discipline": "physics",
+  "tags": [
+    "phase-transition",
+    "thermodynamics",
+    "critical-point",
+    "pressure-temperature"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-290",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "The liquid-vapor coexistence locus terminates at a critical temperature of {t_crit} K and {p_crit} MPa ({fig_ref}).",
+    "required_metrics": [
+      "t_crit",
+      "p_crit"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Dashed line marks the Clausius-Clapeyron theoretical trajectory.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": {
+      "type": "line",
+      "interpolate": "monotone"
+    },
+    "encoding": {
+      "x": {
+        "field": "temperature_k",
+        "type": "quantitative",
+        "title": "Temperature (K)"
+      },
+      "y": {
+        "field": "pressure_mpa",
+        "type": "quantitative",
+        "title": "Pressure (MPa)",
+        "scale": {
+          "type": "log"
+        }
+      },
+      "color": {
+        "field": "phase_boundary",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "temperature_k": 200,
+      "pressure_mpa": 0.05,
+      "phase_boundary": "Sublimation"
+    },
+    {
+      "temperature_k": 273,
+      "pressure_mpa": 0.61,
+      "phase_boundary": "Vaporization"
+    },
+    {
+      "temperature_k": 373,
+      "pressure_mpa": 1.01,
+      "phase_boundary": "Vaporization"
+    },
+    {
+      "temperature_k": 500,
+      "pressure_mpa": 2.64,
+      "phase_boundary": "Vaporization"
+    },
+    {
+      "temperature_k": 647,
+      "pressure_mpa": 22.06,
+      "phase_boundary": "Critical Locus"
+    }
+  ]
+}

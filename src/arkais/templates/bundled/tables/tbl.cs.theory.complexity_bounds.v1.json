@@ -1,0 +1,44 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.cs.theory.complexity_bounds.v1",
+  "version": "1.0.0",
+  "name": "Asymptotic Time and Space Complexity Bounds",
+  "description": "Theoretical complexity bounds comparing standard algorithms against proposed sparse architectures.",
+  "category": "tables",
+  "discipline": "computer_science",
+  "tags": [
+    "algorithms",
+    "complexity",
+    "big-o",
+    "theory"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-240",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The hierarchical index curbs query overhead to $\\mathcal{{O}}({complexity})$ time ({tbl_ref}), unlocking sub-linear scaling.",
+    "required_metrics": [
+      "complexity"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. $N$ denotes sequence token length; $d$ denotes hidden representation dimension.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lccc}\n\\toprule\n\\textbf{Method} & \\textbf{Time Complexity} & \\textbf{Space Complexity} & \\textbf{Memory Scaling} \\\\\n\\midrule\nStandard Attention & $\\mathcal{O}(N^2 d)$ & $\\mathcal{O}(N^2)$ & Quadratic \\\\\nLinear Attention & $\\mathcal{O}(N d^2)$ & $\\mathcal{O}(N d)$ & Linear \\\\\nProposed Hierarchical & $\\mathcal{O}(N \\log N d)$ & $\\mathcal{O}(N \\log N)$ & Quasi-linear \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "method": "Standard",
+      "time": "O(N^2 d)",
+      "space": "O(N^2)",
+      "scaling": "Quadratic"
+    },
+    {
+      "method": "Proposed",
+      "time": "O(N log N d)",
+      "space": "O(N log N)",
+      "scaling": "Quasi-linear"
+    }
+  ]
+}

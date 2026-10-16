@@ -1,0 +1,81 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.physics.spectroscopy.psd_log_fft.v1",
+  "version": "1.0.0",
+  "name": "Power Spectral Density (PSD) on Log-Log Scale",
+  "description": "Fourier transform noise floor with empirical 1/f flicker noise slopes.",
+  "category": "figures",
+  "discipline": "physics",
+  "tags": [
+    "psd",
+    "fourier",
+    "spectroscopy",
+    "noise-floor",
+    "fft"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-315",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "The sensor noise floor stabilizes at {noise_floor} dB/Hz beyond {corner_freq} kHz ({fig_ref}), confirming shot-noise limitation.",
+    "required_metrics": [
+      "noise_floor",
+      "corner_freq"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Welch averaged periodogram calculated over 2,048-point windows.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "frequency_hz",
+        "type": "quantitative",
+        "title": "Frequency (Hz)",
+        "scale": {
+          "type": "log"
+        }
+      },
+      "y": {
+        "field": "power_db_hz",
+        "type": "quantitative",
+        "title": "Power Spectral Density (dB/Hz)"
+      },
+      "color": {
+        "field": "channel",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "frequency_hz": 10,
+      "power_db_hz": -45.2,
+      "channel": "Detector A"
+    },
+    {
+      "frequency_hz": 100,
+      "power_db_hz": -68.4,
+      "channel": "Detector A"
+    },
+    {
+      "frequency_hz": 1000,
+      "power_db_hz": -92.1,
+      "channel": "Detector A"
+    },
+    {
+      "frequency_hz": 10000,
+      "power_db_hz": -118.5,
+      "channel": "Detector A"
+    },
+    {
+      "frequency_hz": 100000,
+      "power_db_hz": -124.0,
+      "channel": "Detector A"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.economics.summary.quantile_statistics.v1",
+  "version": "1.0.0",
+  "name": "Sample Summary Statistics and Quantile Distribution",
+  "description": "Cross-sectional parametric and non-parametric quantile summary statistics.",
+  "category": "tables",
+  "discipline": "economics",
+  "tags": [
+    "summary-statistics",
+    "quantiles",
+    "median",
+    "econometrics"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-890",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The sample demonstrates positive skewness, with median firm revenue of {median_rev} million USD compared to a mean of {mean_rev} million USD ({tbl_ref}).",
+    "required_metrics": [
+      "median_rev",
+      "mean_rev"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Sample covers 14,200 listed enterprises from 2010 to 2024.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccccc}\n\\toprule\n\\textbf{Variable} & \\textbf{Mean} & \\textbf{Std Dev} & \\textbf{P25} & \\textbf{Median} & \\textbf{P75} & \\textbf{$N$} \\\\\n\\midrule\nFirm Revenue (\\$M) & $142.8$ & $210.4$ & $24.1$ & $78.5$ & $165.2$ & $14,200$ \\\\\nCapital Stock (\\$M) & $88.4$ & $124.1$ & $12.5$ & $45.0$ & $98.1$ & $14,200$ \\\\\nEmployees ($n$) & $420$ & $680$ & $85$ & $220$ & $540$ & $14,200$ \\\\\nROA (\\%) & $6.4$ & $4.8$ & $2.8$ & $5.9$ & $9.4$ & $14,200$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "var": "Revenue",
+      "mean": 142.8,
+      "sd": 210.4,
+      "p25": 24.1,
+      "med": 78.5,
+      "p75": 165.2
+    },
+    {
+      "var": "ROA",
+      "mean": 6.4,
+      "sd": 4.8,
+      "p25": 2.8,
+      "med": 5.9,
+      "p75": 9.4
+    }
+  ]
+}

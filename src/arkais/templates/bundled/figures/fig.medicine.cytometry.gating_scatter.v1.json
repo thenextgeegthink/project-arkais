@@ -1,0 +1,82 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.medicine.cytometry.gating_scatter.v1",
+  "version": "1.0.0",
+  "name": "Bivariate Flow Cytometry Quadrant Gating Scatter",
+  "description": "Two-parameter fluorescence intensity scatter with lymphocyte subpopulation gating.",
+  "category": "figures",
+  "discipline": "medicine",
+  "tags": [
+    "flow-cytometry",
+    "immunology",
+    "gating",
+    "cd4",
+    "cd8"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-615",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "Gating analysis revealed an expanded $\\text{{CD4}}^+/\\text{{CD8}}^-$ subpopulation comprising {cd4_pct}% of total viable lymphocytes ({fig_ref}).",
+    "required_metrics": [
+      "cd4_pct"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Quadrant gates drawn at $10^2$ fluorescence arbitrary units.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": {
+      "type": "point",
+      "size": 30,
+      "opacity": 0.6
+    },
+    "encoding": {
+      "x": {
+        "field": "cd4_pe",
+        "type": "quantitative",
+        "title": "CD4-PE Intensity",
+        "scale": {
+          "type": "log"
+        }
+      },
+      "y": {
+        "field": "cd8_apc",
+        "type": "quantitative",
+        "title": "CD8-APC Intensity",
+        "scale": {
+          "type": "log"
+        }
+      },
+      "color": {
+        "field": "population",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "cd4_pe": 450,
+      "cd8_apc": 12,
+      "population": "CD4+ T-Cells"
+    },
+    {
+      "cd4_pe": 520,
+      "cd8_apc": 18,
+      "population": "CD4+ T-Cells"
+    },
+    {
+      "cd4_pe": 15,
+      "cd8_apc": 820,
+      "population": "CD8+ T-Cells"
+    },
+    {
+      "cd4_pe": 22,
+      "cd8_apc": 910,
+      "population": "CD8+ T-Cells"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.medicine.pharmacology.dose_response_hill.v1",
+  "version": "1.0.0",
+  "name": "Sigmoidal Dose-Response Hill Curve with IC50 Mark",
+  "description": "Logarithmic ligand concentration versus biological inhibitory response curve.",
+  "category": "figures",
+  "discipline": "medicine",
+  "tags": [
+    "pharmacology",
+    "dose-response",
+    "ic50",
+    "hill-curve"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-565",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "Nonlinear regression confirms potent target inhibition with half-maximal inhibitory concentration $\\text{{IC}}_{{50}} = {ic50_nm}$ nM ({fig_ref}).",
+    "required_metrics": [
+      "ic50_nm"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Data points represent mean $\\pm$ SD across triplicate assays.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": {
+      "type": "line",
+      "interpolate": "monotone"
+    },
+    "encoding": {
+      "x": {
+        "field": "log_dose_m",
+        "type": "quantitative",
+        "title": "Concentration (log [M])"
+      },
+      "y": {
+        "field": "inhibition_pct",
+        "type": "quantitative",
+        "title": "Inhibition (%)"
+      },
+      "color": {
+        "field": "compound",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "log_dose_m": -10,
+      "inhibition_pct": 2.1,
+      "compound": "Candidate-01"
+    },
+    {
+      "log_dose_m": -9,
+      "inhibition_pct": 8.4,
+      "compound": "Candidate-01"
+    },
+    {
+      "log_dose_m": -8,
+      "inhibition_pct": 52.0,
+      "compound": "Candidate-01"
+    },
+    {
+      "log_dose_m": -7,
+      "inhibition_pct": 89.2,
+      "compound": "Candidate-01"
+    },
+    {
+      "log_dose_m": -6,
+      "inhibition_pct": 98.4,
+      "compound": "Candidate-01"
+    }
+  ]
+}

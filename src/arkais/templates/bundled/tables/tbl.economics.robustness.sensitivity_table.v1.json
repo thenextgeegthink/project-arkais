@@ -1,0 +1,40 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.economics.robustness.sensitivity_table.v1",
+  "version": "1.0.0",
+  "name": "Model Specification and Robustness Sensitivity Matrix",
+  "description": "Evaluation of core causal coefficients across alternative fixed effects and sample trims.",
+  "category": "tables",
+  "discipline": "economics",
+  "tags": [
+    "robustness",
+    "sensitivity",
+    "fixed-effects",
+    "econometrics"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-990",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The core parameter remains stable across robustness checks, persisting between {min_coeff} and {max_coeff} ({tbl_ref}).",
+    "required_metrics": [
+      "min_coeff",
+      "max_coeff"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Columns indicate progressive addition of industry and regional controls.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Control Set} & \\textbf{Model (1)} & \\textbf{Model (2)} & \\textbf{Model (3)} & \\textbf{Model (4)} \\\\\n\\midrule\nCore Coefficient & $0.185^{**}$ & $0.178^{**}$ & $0.172^{**}$ & $0.169^{**}$ \\\\\nIndustry FE & No & Yes & Yes & Yes \\\\\nYear FE & No & No & Yes & Yes \\\\\nWinsorized (1\\%) & No & No & No & Yes \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "ctrl": "Core Coeff",
+      "m1": "0.185",
+      "m2": "0.178",
+      "m3": "0.172",
+      "m4": "0.169"
+    }
+  ]
+}
