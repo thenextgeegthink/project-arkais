@@ -1,0 +1,100 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.cs.classification.confusion_matrix.v1",
+  "version": "1.0.0",
+  "name": "Normalized Multi-Class Confusion Matrix",
+  "description": "Row-normalized confusion matrix across classification categories.",
+  "category": "figures",
+  "discipline": "computer_science",
+  "tags": [
+    "confusion-matrix",
+    "classification",
+    "accuracy",
+    "evaluation"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-162",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "The model preserves robust discrimination, securing a true positive recall of {recall_pct}% on the primary target class ({fig_ref}).",
+    "required_metrics": [
+      "recall_pct"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Cell values correspond to row-normalized proportions.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "rect",
+    "encoding": {
+      "x": {
+        "field": "predicted",
+        "type": "nominal",
+        "title": "Predicted Label"
+      },
+      "y": {
+        "field": "actual",
+        "type": "nominal",
+        "title": "Ground Truth Label"
+      },
+      "color": {
+        "field": "proportion",
+        "type": "quantitative",
+        "title": "Recall",
+        "scale": {
+          "scheme": "blues"
+        }
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "actual": "Class A",
+      "predicted": "Class A",
+      "proportion": 0.94
+    },
+    {
+      "actual": "Class A",
+      "predicted": "Class B",
+      "proportion": 0.04
+    },
+    {
+      "actual": "Class A",
+      "predicted": "Class C",
+      "proportion": 0.02
+    },
+    {
+      "actual": "Class B",
+      "predicted": "Class A",
+      "proportion": 0.05
+    },
+    {
+      "actual": "Class B",
+      "predicted": "Class B",
+      "proportion": 0.91
+    },
+    {
+      "actual": "Class B",
+      "predicted": "Class C",
+      "proportion": 0.04
+    },
+    {
+      "actual": "Class C",
+      "predicted": "Class A",
+      "proportion": 0.03
+    },
+    {
+      "actual": "Class C",
+      "predicted": "Class B",
+      "proportion": 0.07
+    },
+    {
+      "actual": "Class C",
+      "predicted": "Class C",
+      "proportion": 0.9
+    }
+  ]
+}

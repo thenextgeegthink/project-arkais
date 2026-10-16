@@ -1,0 +1,46 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.medicine.safety.adverse_events.v1",
+  "version": "1.0.0",
+  "name": "Treatment-Emergent Adverse Events Stratified by Severity Grade",
+  "description": "Safety evaluation comparing drug-related adverse events across CTCAE grades.",
+  "category": "tables",
+  "discipline": "medicine",
+  "tags": [
+    "safety",
+    "adverse-events",
+    "toxicology",
+    "clinical-trial"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-665",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "Grade 3 or 4 adverse reactions occurred in only {severe_ae_pct}% of recipients ({tbl_ref}), demonstrating manageable tolerability.",
+    "required_metrics": [
+      "severe_ae_pct"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Severity graded according to NCI-CTCAE v5.0.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Adverse Event} & \\textbf{Tx Grade 1--2} & \\textbf{Tx Grade 3--4} & \\textbf{Pbo Grade 1--2} & \\textbf{Pbo Grade 3--4} \\\\\n\\midrule\nNausea & $24$ ($16.0\\%$) & $2$ ($1.3\\%$) & $14$ ($9.3\\%$) & $0$ ($0.0\\%$) \\\\\nFatigue & $32$ ($21.3\\%$) & $3$ ($2.0\\%$) & $28$ ($18.7\\%$) & $1$ ($0.7\\%$) \\\\\nNeutropenia & $8$ ($5.3\\%$) & $4$ ($2.7\\%$) & $2$ ($1.3\\%$) & $0$ ($0.0\\%$) \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "ae": "Nausea",
+      "tx_mild": 24,
+      "tx_sev": 2,
+      "pbo_mild": 14,
+      "pbo_sev": 0
+    },
+    {
+      "ae": "Neutropenia",
+      "tx_mild": 8,
+      "tx_sev": 4,
+      "pbo_mild": 2,
+      "pbo_sev": 0
+    }
+  ]
+}

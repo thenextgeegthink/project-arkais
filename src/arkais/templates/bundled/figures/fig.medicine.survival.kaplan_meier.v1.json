@@ -1,0 +1,95 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.medicine.survival.kaplan_meier.v1",
+  "version": "1.0.0",
+  "name": "Kaplan-Meier Overall Survival Curves with Censoring",
+  "description": "Product-limit overall survival analysis comparing therapeutic cohorts.",
+  "category": "figures",
+  "discipline": "medicine",
+  "tags": [
+    "kaplan-meier",
+    "survival",
+    "oncology",
+    "clinical-trial"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-515",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "The experimental cohort attained a median progression-free survival of {median_months} months versus {control_months} months for standard therapy ({fig_ref}, $p < 0.001$).",
+    "required_metrics": [
+      "median_months",
+      "control_months"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Tick marks denote right-censored patients.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": {
+      "type": "line",
+      "interpolate": "step-after"
+    },
+    "encoding": {
+      "x": {
+        "field": "months",
+        "type": "quantitative",
+        "title": "Time Since Randomization (Months)"
+      },
+      "y": {
+        "field": "survival_pct",
+        "type": "quantitative",
+        "title": "Overall Survival (%)"
+      },
+      "color": {
+        "field": "cohort",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "months": 0,
+      "survival_pct": 100,
+      "cohort": "Arkais-Tx"
+    },
+    {
+      "months": 6,
+      "survival_pct": 92,
+      "cohort": "Arkais-Tx"
+    },
+    {
+      "months": 12,
+      "survival_pct": 84,
+      "cohort": "Arkais-Tx"
+    },
+    {
+      "months": 24,
+      "survival_pct": 72,
+      "cohort": "Arkais-Tx"
+    },
+    {
+      "months": 0,
+      "survival_pct": 100,
+      "cohort": "Placebo"
+    },
+    {
+      "months": 6,
+      "survival_pct": 78,
+      "cohort": "Placebo"
+    },
+    {
+      "months": 12,
+      "survival_pct": 54,
+      "cohort": "Placebo"
+    },
+    {
+      "months": 24,
+      "survival_pct": 36,
+      "cohort": "Placebo"
+    }
+  ]
+}
