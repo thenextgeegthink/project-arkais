@@ -1,0 +1,76 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.engineering.thermal.lattice_dissipation.v1",
+  "version": "1.0.0",
+  "name": "Thermal Fin Lattice Temperature Dissipation Profile",
+  "description": "Steady-state temperature drop across convective heatsink fin coordinates.",
+  "category": "figures",
+  "discipline": "engineering",
+  "tags": [
+    "thermal",
+    "heatsink",
+    "convection",
+    "dissipation"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-1115",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "The convective fin array reduces junction temperature to {junction_temp_c} \u00b0C ({fig_ref}) under 150 W sustained dissipation.",
+    "required_metrics": [
+      "junction_temp_c"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Ambient airflow velocity calibrated at 2.5 m/s.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "fin_position_mm",
+        "type": "quantitative",
+        "title": "Fin Coordinate (mm)"
+      },
+      "y": {
+        "field": "temperature_c",
+        "type": "quantitative",
+        "title": "Temperature (\u00b0C)"
+      },
+      "color": {
+        "field": "material",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "fin_position_mm": 0,
+      "temperature_c": 84.5,
+      "material": "Copper"
+    },
+    {
+      "fin_position_mm": 15,
+      "temperature_c": 72.1,
+      "material": "Copper"
+    },
+    {
+      "fin_position_mm": 30,
+      "temperature_c": 61.4,
+      "material": "Copper"
+    },
+    {
+      "fin_position_mm": 45,
+      "temperature_c": 52.8,
+      "material": "Copper"
+    },
+    {
+      "fin_position_mm": 60,
+      "temperature_c": 46.2,
+      "material": "Copper"
+    }
+  ]
+}

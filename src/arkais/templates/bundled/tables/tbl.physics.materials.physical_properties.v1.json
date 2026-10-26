@@ -1,0 +1,45 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.physics.materials.physical_properties.v1",
+  "version": "1.0.0",
+  "name": "Synthesized Alloy Physical Properties and Uncertainty Limits",
+  "description": "Bulk density, Young's modulus, and thermal conductivity with uncertainty bounds.",
+  "category": "tables",
+  "discipline": "physics",
+  "tags": [
+    "materials",
+    "density",
+    "modulus",
+    "conductivity",
+    "uncertainty"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-415",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The ternary alloy exhibits superior structural stiffness, yielding Young's modulus of {modulus_gpa} GPa ({tbl_ref}).",
+    "required_metrics": [
+      "modulus_gpa"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Uncertainties correspond to expanded standard deviation ($k=2$, 95% level).",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Material Specimen} & \\textbf{Density (g/cm$^3$)} & \\textbf{Modulus $E$ (GPa)} & \\textbf{Conductivity (W/m$\\cdot$K)} & \\textbf{Poisson Ratio} \\\\\n\\midrule\nTi-6Al-4V (Annealed) & $4.43 \\pm 0.02$ & $113.8 \\pm 1.2$ & $6.7 \\pm 0.3$ & $0.342$ \\\\\nInconel 718 & $8.19 \\pm 0.03$ & $205.0 \\pm 2.5$ & $11.4 \\pm 0.5$ & $0.294$ \\\\\nArkais-Alloy-X & $5.12 \\pm 0.02$ & $184.2 \\pm 1.8$ & $24.8 \\pm 0.8$ & $0.315$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "material": "Ti-6Al-4V",
+      "density": "4.43",
+      "modulus": "113.8",
+      "conductivity": "6.7"
+    },
+    {
+      "material": "Inconel 718",
+      "density": "8.19",
+      "modulus": "205.0",
+      "conductivity": "11.4"
+    }
+  ]
+}

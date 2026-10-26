@@ -1,0 +1,47 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.economics.finance.cost_benefit_scenario.v1",
+  "version": "1.0.0",
+  "name": "Discounted Cash Flow Scenario Analysis and Payback Horizon",
+  "description": "Net present value (NPV) and internal rate of return (IRR) across discount scenarios.",
+  "category": "tables",
+  "discipline": "economics",
+  "tags": [
+    "finance",
+    "npv",
+    "irr",
+    "cost-benefit",
+    "scenarios"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-940",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "Under the baseline discount rate of 7%, the infrastructure initiative yields an NPV of {npv_m} million USD ({tbl_ref}).",
+    "required_metrics": [
+      "npv_m"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Projections evaluated over a 20-year economic lifecycle.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Scenario} & \\textbf{Capex (\\$M)} & \\textbf{NPV (\\$M)} & \\textbf{IRR (\\%)} & \\textbf{Payback (Years)} \\\\\n\\midrule\nConservative & $45.0$ & $18.4$ & $11.2\\%$ & $6.8$ \\\\\nBaseline & $40.0$ & $34.8$ & $15.4\\%$ & $4.9$ \\\\\nOptimistic & $36.0$ & $52.1$ & $19.8\\%$ & $3.7$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "scenario": "Conservative",
+      "capex": 45.0,
+      "npv": 18.4,
+      "irr": "11.2%",
+      "payback": 6.8
+    },
+    {
+      "scenario": "Baseline",
+      "capex": 40.0,
+      "npv": 34.8,
+      "irr": "15.4%",
+      "payback": 4.9
+    }
+  ]
+}

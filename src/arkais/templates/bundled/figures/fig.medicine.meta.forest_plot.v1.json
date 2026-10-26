@@ -1,0 +1,100 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.medicine.meta.forest_plot.v1",
+  "version": "1.0.0",
+  "name": "Meta-Analytic Forest Plot with 95% Confidence Intervals",
+  "description": "Multi-study effect size summary plotting odds ratios and overall summary effect.",
+  "category": "figures",
+  "discipline": "medicine",
+  "tags": [
+    "forest-plot",
+    "meta-analysis",
+    "odds-ratio",
+    "evidence-synthesis"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-540",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "The pooled random-effects estimate confirms a statistically significant benefit (OR = {odds_ratio}, 95% CI: [{ci_lower}, {ci_upper}], {fig_ref}).",
+    "required_metrics": [
+      "odds_ratio",
+      "ci_lower",
+      "ci_upper"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Box sizes are proportional to inverse-variance study weights.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "layer": [
+      {
+        "mark": "errorbar",
+        "encoding": {
+          "y": {
+            "field": "study",
+            "type": "nominal",
+            "title": "Study"
+          },
+          "x": {
+            "field": "ci_lower",
+            "type": "quantitative",
+            "title": "Odds Ratio (95% CI)"
+          },
+          "x2": {
+            "field": "ci_upper"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "point",
+          "filled": true,
+          "size": 80
+        },
+        "encoding": {
+          "y": {
+            "field": "study",
+            "type": "nominal"
+          },
+          "x": {
+            "field": "odds_ratio",
+            "type": "quantitative"
+          },
+          "color": {
+            "value": "#0284c7"
+          }
+        }
+      }
+    ]
+  },
+  "sample_data": [
+    {
+      "study": "Alvarez et al. (2018)",
+      "odds_ratio": 0.65,
+      "ci_lower": 0.45,
+      "ci_upper": 0.94
+    },
+    {
+      "study": "Chen & Miller (2020)",
+      "odds_ratio": 0.58,
+      "ci_lower": 0.38,
+      "ci_upper": 0.88
+    },
+    {
+      "study": "Olsen et al. (2022)",
+      "odds_ratio": 0.72,
+      "ci_lower": 0.52,
+      "ci_upper": 0.99
+    },
+    {
+      "study": "Pooled Effect",
+      "odds_ratio": 0.64,
+      "ci_lower": 0.51,
+      "ci_upper": 0.8
+    }
+  ]
+}

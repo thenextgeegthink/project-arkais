@@ -1,0 +1,23 @@
+ARKAIS COMMUNITY & RESEARCH EVALUATION LICENSE
+Version 1.0, October 2026
+Copyright (c) 2026 The Next Geek Think (NGT). All rights reserved.
+
+1. PERMITTED USES
+Subject to the terms and conditions of this License, The Next Geek Think ("Licensor") hereby grants you a non-exclusive, non-transferable, royalty-free license to use, execute, reproduce, and display the Project Arkais client software, SDK, CLI, and associated sample figures solely for:
+(a) Personal, academic, scientific, or institutional non-commercial research;
+(b) Internal evaluation and testing of Project Arkais capabilities;
+(c) Creating scientific manuscripts, preprints, and figures authored by you.
+
+2. RESTRICTIONS
+You may not, and may not permit any third party to:
+(a) Sell, rent, lease, sublicense, distribute, or commercially exploit Project Arkais software, whether as standalone software or bundled into another commercial product, without a separate written commercial license from Licensor;
+(b) Host Project Arkais, Arkais Studio, or the signature engine as a managed service, hosted API, software-as-a-service (SaaS), or multi-tenant cloud service for third parties;
+(c) Reverse-engineer, decompile, disassemble, or derive source code from any obfuscated, binary, or compiled component of Project Arkais, except to the extent permitted by applicable non-waivable statutory law;
+(d) Clone, copy, or redistribute the proprietary visual design, typography, or UI layouts of Arkais Studio or Astryx Design System;
+(e) Remove, alter, or obscure any copyright, trademark, or patent notices.
+
+3. COMMUNITY EXTENSIONS
+Community contributions submitted to the official Project Arkais repository for scientific figures, Vega-Lite visualizers, CSL citation formats, and Quarto templates may be governed by open-source terms (e.g. MIT or Apache-2.0) as explicitly indicated in their respective directories or headers. The core engine and Studio application remain governed by this License.
+
+4. DISCLAIMER OF WARRANTIES
+PROJECT ARKAIS IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE.

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.engineering.reliability.weibull_distribution.v1",
+  "version": "1.0.0",
+  "name": "Weibull Cumulative Failure Probability Reliability Curve",
+  "description": "Failure distribution modeling fatigue cycles on Weibull probability coordinates.",
+  "category": "figures",
+  "discipline": "engineering",
+  "tags": [
+    "weibull",
+    "reliability",
+    "failure-probability",
+    "fatigue"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-1090",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "Fitted Weibull parameters yield a shape parameter $\\beta = {shape_beta}$ ({fig_ref}), confirming wear-out degradation.",
+    "required_metrics": [
+      "shape_beta"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Scale parameter $\\eta = 1.2 \\times 10^6$ cycles.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "cycles_10k",
+        "type": "quantitative",
+        "title": "Fatigue Cycles ($\\times 10^4$)"
+      },
+      "y": {
+        "field": "failure_pct",
+        "type": "quantitative",
+        "title": "Cumulative Failure Probability (%)"
+      },
+      "color": {
+        "field": "treatment",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "cycles_10k": 10,
+      "failure_pct": 1.2,
+      "treatment": "Shot-Peened"
+    },
+    {
+      "cycles_10k": 30,
+      "failure_pct": 5.4,
+      "treatment": "Shot-Peened"
+    },
+    {
+      "cycles_10k": 60,
+      "failure_pct": 28.1,
+      "treatment": "Shot-Peened"
+    },
+    {
+      "cycles_10k": 90,
+      "failure_pct": 63.2,
+      "treatment": "Shot-Peened"
+    },
+    {
+      "cycles_10k": 120,
+      "failure_pct": 94.0,
+      "treatment": "Shot-Peened"
+    }
+  ]
+}
