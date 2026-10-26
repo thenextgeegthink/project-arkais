@@ -1,0 +1,71 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.economics.survey.likert_diverging_bar.v1",
+  "version": "1.0.0",
+  "name": "Diverging Stacked Likert Scale Sentiment Distribution",
+  "description": "Centered diverging stacked bar chart visualizing 5-point survey agreement.",
+  "category": "figures",
+  "discipline": "economics",
+  "tags": [
+    "likert",
+    "survey",
+    "sentiment",
+    "stacked-bar"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-865",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "Survey respondents expressed broad agreement with institutional governance ({agree_pct}% positive across executive cohorts, {fig_ref}).",
+    "required_metrics": [
+      "agree_pct"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Neutral responses split symmetrically along zero axis.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "question",
+        "type": "nominal",
+        "title": "Survey Dimension"
+      },
+      "x": {
+        "field": "percentage",
+        "type": "quantitative",
+        "title": "Response Proportion (%)"
+      },
+      "color": {
+        "field": "response",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "question": "Fiscal Transparency",
+      "response": "Disagree",
+      "percentage": -24
+    },
+    {
+      "question": "Fiscal Transparency",
+      "response": "Agree",
+      "percentage": 76
+    },
+    {
+      "question": "Regulatory Stability",
+      "response": "Disagree",
+      "percentage": -38
+    },
+    {
+      "question": "Regulatory Stability",
+      "response": "Agree",
+      "percentage": 62
+    }
+  ]
+}

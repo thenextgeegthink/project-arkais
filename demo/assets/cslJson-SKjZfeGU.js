@@ -1,0 +1,1 @@
+function e(e){return`${JSON.stringify(e,null,2)}\n`}export{e as serialize};

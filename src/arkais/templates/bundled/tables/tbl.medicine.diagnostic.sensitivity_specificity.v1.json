@@ -1,0 +1,46 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.medicine.diagnostic.sensitivity_specificity.v1",
+  "version": "1.0.0",
+  "name": "Diagnostic Accuracy Metrics and Predictive Values",
+  "description": "Sensitivity, specificity, positive predictive value, and negative predictive value with 95% CIs.",
+  "category": "tables",
+  "discipline": "medicine",
+  "tags": [
+    "diagnostics",
+    "sensitivity",
+    "specificity",
+    "ppv",
+    "npv"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-740",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The diagnostic assay achieved sensitivity of {sensitivity_pct}% and specificity of {specificity_pct}% ({tbl_ref}) against gold-standard PCR.",
+    "required_metrics": [
+      "sensitivity_pct",
+      "specificity_pct"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Evaluated on blinded cohort of 400 patient specimens.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lccc}\n\\toprule\n\\textbf{Diagnostic Assay} & \\textbf{Sensitivity (95\\% CI)} & \\textbf{Specificity (95\\% CI)} & \\textbf{Positive LR} \\\\\n\\midrule\nRapid Antigen Screen & $84.2\\%$ [$78.1, 89.2$] & $96.8\\%$ [$94.0, 98.5$] & $26.3$ \\\\\nAutomated Chemiluminescence & $95.6\\%$ [$91.8, 98.0$] & $98.4\\%$ [$96.2, 99.5$] & $59.8$ \\\\\nProposed Biosensor Assay & $98.1\\%$ [$95.2, 99.5$] & $99.2\\%$ [$97.5, 99.9$] & $122.6$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "assay": "Rapid Screen",
+      "sens": "84.2%",
+      "spec": "96.8%",
+      "plr": 26.3
+    },
+    {
+      "assay": "Biosensor",
+      "sens": "98.1%",
+      "spec": "99.2%",
+      "plr": 122.6
+    }
+  ]
+}

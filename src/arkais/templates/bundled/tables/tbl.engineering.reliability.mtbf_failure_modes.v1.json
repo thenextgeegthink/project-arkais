@@ -1,0 +1,46 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.engineering.reliability.mtbf_failure_modes.v1",
+  "version": "1.0.0",
+  "name": "Subsystem Mean Time Between Failures and FMEA Criticality",
+  "description": "Failure Modes, Effects, and Criticality Analysis (FMECA) with MTBF hours.",
+  "category": "tables",
+  "discipline": "engineering",
+  "tags": [
+    "fmea",
+    "mtbf",
+    "reliability",
+    "failure-modes"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-1140",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "The telemetry module secures an operational MTBF of {mtbf_hours} hours ({tbl_ref}), meeting mission life criteria.",
+    "required_metrics": [
+      "mtbf_hours"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Reliability evaluated under MIL-HDBK-217F ground benign environment.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Subsystem Module} & \\textbf{MTBF (Hours)} & \\textbf{Failure Rate (FIT)} & \\textbf{Primary Failure Mode} & \\textbf{RPN} \\\\\n\\midrule\nPower Regulation & $450,000$ & $2,222$ & Capacitor Dielectric Breakdown & $120$ \\\\\nOptoelectronic Link & $820,000$ & $1,219$ & Laser Diode Facet Degradation & $96$ \\\\\nProcessor Core & $1,250,000$ & $800$ & Electromigration Open & $64$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "module": "Power Reg",
+      "mtbf": 450000,
+      "fit": 2222,
+      "mode": "Dielectric",
+      "rpn": 120
+    },
+    {
+      "module": "Processor",
+      "mtbf": 1250000,
+      "fit": 800,
+      "mode": "Electromigration",
+      "rpn": 64
+    }
+  ]
+}
