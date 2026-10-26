@@ -1,0 +1,48 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.engineering.telecom.snr_test_matrix.v1",
+  "version": "1.0.0",
+  "name": "Signal-to-Noise Ratio and Bit Error Rate Test Matrix",
+  "description": "Radio channel performance across SNR operating conditions and modulation schemes.",
+  "category": "tables",
+  "discipline": "engineering",
+  "tags": [
+    "telecom",
+    "snr",
+    "ber",
+    "qam",
+    "modulation"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-1190",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "Under low-noise channel conditions ($E_b/N_0 = {snr_db}$ dB), bit error rate dropped below {ber_exp} ({tbl_ref}).",
+    "required_metrics": [
+      "snr_db",
+      "ber_exp"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Additive White Gaussian Noise (AWGN) channel simulation with LDPC rate 3/4.",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{lcccc}\n\\toprule\n\\textbf{Modulation Scheme} & \\textbf{SNR (dB)} & \\textbf{Bit Error Rate (BER)} & \\textbf{Throughput (Mbps)} & \\textbf{Packet Loss} \\\\\n\\midrule\nQPSK & $6.0$ & $1.2 \\times 10^{-6}$ & $18.4$ & $0.02\\%$ \\\\\n16-QAM & $12.0$ & $4.5 \\times 10^{-6}$ & $38.2$ & $0.05\\%$ \\\\\n64-QAM & $18.0$ & $8.1 \\times 10^{-6}$ & $58.1$ & $0.12\\%$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "mod": "QPSK",
+      "snr": 6.0,
+      "ber": "1.2e-6",
+      "tput": 18.4,
+      "loss": "0.02%"
+    },
+    {
+      "mod": "64-QAM",
+      "snr": 18.0,
+      "ber": "8.1e-6",
+      "tput": 58.1,
+      "loss": "0.12%"
+    }
+  ]
+}

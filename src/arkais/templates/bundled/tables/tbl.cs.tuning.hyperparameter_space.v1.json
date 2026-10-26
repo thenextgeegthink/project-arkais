@@ -1,0 +1,45 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "tbl.cs.tuning.hyperparameter_space.v1",
+  "version": "1.0.0",
+  "name": "Optimization Hyperparameter Space and Selected Configurations",
+  "description": "Search ranges, probability distributions, and selected optimal hyperparameter settings.",
+  "category": "tables",
+  "discipline": "computer_science",
+  "tags": [
+    "hyperparameters",
+    "tuning",
+    "optimization",
+    "bayesian"
+  ],
+  "engine": "latex-booktabs",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-190",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "tabular_baseline",
+    "in_prose_blueprint": "Bayesian optimization converged on an optimal learning rate of {learning_rate} with weight decay of {weight_decay} ({tbl_ref}).",
+    "required_metrics": [
+      "learning_rate",
+      "weight_decay"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Parameters determined via 200 trials of Tree-structured Parzen Estimator (TPE).",
+  "spec": "\\begin{table}[t]\n\\centering\n\\small\n\\begin{tabular}{llcc}\n\\toprule\n\\textbf{Hyperparameter} & \\textbf{Prior Distribution} & \\textbf{Search Range} & \\textbf{Optimal Setting} \\\\\n\\midrule\nLearning Rate & Log-Uniform & $[10^{-5}, 10^{-2}]$ & $2.4 \\times 10^{-4}$ \\\\\nWeight Decay & Uniform & $[0.0, 0.1]$ & $0.012$ \\\\\nWarmup Steps & Discrete & $[500, 5000]$ & $2000$ \\\\\nDropout Rate & Uniform & $[0.0, 0.5]$ & $0.10$ \\\\\nBatch Size & Categorical & $\\{32, 64, 128\\}$ & $64$ \\\\\n\\bottomrule\n\\end{tabular}\n\\end{table}",
+  "sample_data": [
+    {
+      "param": "Learning Rate",
+      "prior": "Log-Uniform",
+      "range": "[1e-5, 1e-2]",
+      "optimal": "2.4e-4"
+    },
+    {
+      "param": "Weight Decay",
+      "prior": "Uniform",
+      "range": "[0.0, 0.1]",
+      "optimal": "0.012"
+    }
+  ]
+}

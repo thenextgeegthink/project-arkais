@@ -1,0 +1,76 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.engineering.materials.stress_strain_curve.v1",
+  "version": "1.0.0",
+  "name": "Tensile Stress-Strain Deformation Trajectory",
+  "description": "Elastic linear region, 0.2% offset yield strength, ultimate tensile strength, and fracture.",
+  "category": "figures",
+  "discipline": "engineering",
+  "tags": [
+    "materials",
+    "stress-strain",
+    "yield-strength",
+    "tensile-test"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-1040",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "The additive specimen reaches an ultimate tensile strength of {uts_mpa} MPa prior to necking ({fig_ref}).",
+    "required_metrics": [
+      "uts_mpa"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Uniaxial tensile testing conducted per ASTM E8M standards.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "strain_pct",
+        "type": "quantitative",
+        "title": "Engineering Strain (%)"
+      },
+      "y": {
+        "field": "stress_mpa",
+        "type": "quantitative",
+        "title": "Engineering Stress (MPa)"
+      },
+      "color": {
+        "field": "specimen",
+        "type": "nominal"
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "strain_pct": 0.0,
+      "stress_mpa": 0,
+      "specimen": "Alloy-7075"
+    },
+    {
+      "strain_pct": 0.4,
+      "stress_mpa": 280,
+      "specimen": "Alloy-7075"
+    },
+    {
+      "strain_pct": 0.8,
+      "stress_mpa": 505,
+      "specimen": "Alloy-7075"
+    },
+    {
+      "strain_pct": 4.0,
+      "stress_mpa": 570,
+      "specimen": "Alloy-7075"
+    },
+    {
+      "strain_pct": 11.2,
+      "stress_mpa": 530,
+      "specimen": "Alloy-7075"
+    }
+  ]
+}

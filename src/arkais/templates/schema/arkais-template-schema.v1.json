@@ -1,0 +1,186 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "title": "ArkaisTemplateEnvelope",
+  "description": "Standardized schema envelope for publication-grade scientific figures and tables in Project Arkais.",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "name",
+    "category",
+    "discipline",
+    "tags",
+    "engine",
+    "author",
+    "signature_integration",
+    "spec"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri",
+      "description": "Optional URI pointing to this schema version."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^(fig|tbl)\\.[a-z0-9_]+\\.[a-z0-9_]+\\.[a-z0-9_]+\\.v[0-9]+$",
+      "description": "Unique canonical identifier (e.g., fig.physics.scatter.pareto_frontier.v1 or tbl.cs.benchmarks.model_comparison.v1)."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(-[0-9A-Za-z.-]+)?$",
+      "description": "SemVer version string of the template."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 160,
+      "description": "Human-readable publication title of the asset."
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed explanation of the visual asset, scientific utility, and expected data encoding."
+    },
+    "category": {
+      "type": "string",
+      "enum": ["figures", "tables"],
+      "description": "Broad asset category."
+    },
+    "discipline": {
+      "type": "string",
+      "enum": [
+        "physics",
+        "computer_science",
+        "medicine",
+        "economics",
+        "engineering",
+        "general"
+      ],
+      "description": "Target scientific discipline or field."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Taxonomy tags for semantic search and registry indexing."
+    },
+    "engine": {
+      "type": "string",
+      "enum": ["vega-lite", "latex-booktabs", "matplotlib", "mermaid", "svg-custom"],
+      "description": "Declarative rendering engine targeted by this template."
+    },
+    "min_engine_version": {
+      "type": "string",
+      "description": "Minimum required version of the rendering engine or Arkais runtime."
+    },
+    "author": {
+      "type": "string",
+      "description": "Creator or maintainer organization (e.g., The Next Geek Think (NGT))."
+    },
+    "license": {
+      "type": "string",
+      "default": "Apache-2.0",
+      "description": "SPDX license expression governing the template definition."
+    },
+    "provenance_ark": {
+      "type": "string",
+      "pattern": "^ARK-[0-9]{3,5}$",
+      "description": "Optional ARK accession identifier of the grounded historical paper inspiring this archetype."
+    },
+    "signature_integration": {
+      "type": "object",
+      "required": [
+        "recommended_gate",
+        "weaving_archetype",
+        "in_prose_blueprint"
+      ],
+      "properties": {
+        "recommended_gate": {
+          "type": "string",
+          "pattern": "^GATE-[0-9]{2}$",
+          "description": "Arkais Stylometric Quality Gate enforcing this visual asset (e.g., GATE-07, GATE-08)."
+        },
+        "weaving_archetype": {
+          "type": "string",
+          "enum": [
+            "parenthetical_grounding",
+            "lead_in_assertion",
+            "comparative_delta",
+            "methodological_protocol",
+            "tabular_baseline"
+          ],
+          "description": "Rhetorical pattern governing how this asset is referenced in scholarly prose."
+        },
+        "in_prose_blueprint": {
+          "type": "string",
+          "minLength": 10,
+          "description": "Template prose string with format tokens (e.g. {fig_ref}, {x_min}, {y_val}, {units}). Must avoid detached phrasing like 'Figure 1 shows'."
+        },
+        "required_metrics": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Key quantitative metrics that must be populated in the prose reference (e.g., p_value, sample_size, ci_95)."
+        },
+        "unit_discipline": {
+          "type": "string",
+          "description": "Physical unit system standard (e.g., GATE-08 SI standard units)."
+        },
+        "grounding_rules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Stylometric assertion rules to prevent hallucinated narrative bounds."
+        }
+      },
+      "additionalProperties": false
+    },
+    "caption_blueprint": {
+      "type": "string",
+      "description": "Academic caption pattern for the figure or table (e.g., 'Figure {num}: {title}. Error bars represent 95% confidence intervals.')."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Academic footnotes, significance level indicators (* p < 0.05, ** p < 0.01), or corpus data source attributions."
+    },
+    "parameters": {
+      "type": "object",
+      "description": "Configurable parameter definitions supported by the template spec.",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["type", "description"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["string", "number", "integer", "boolean", "array", "color"]
+          },
+          "description": { "type": "string" },
+          "default": {},
+          "choices": { "type": "array" },
+          "min_value": { "type": "number" },
+          "max_value": { "type": "number" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "spec": {
+      "description": "The engine-specific declarative specification. Vega-Lite JSON object, LaTeX booktabs string/object, Matplotlib config, or Mermaid string.",
+      "oneOf": [
+        { "type": "object" },
+        { "type": "string" }
+      ]
+    },
+    "sample_data": {
+      "description": "Representative dataset enabling instant out-of-the-box rendering and unit testing.",
+      "oneOf": [
+        {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        {
+          "type": "object"
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

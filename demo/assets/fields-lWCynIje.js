@@ -1,0 +1,1 @@
+function e(e){let t=e.issued?.[`date-parts`]?.[0]?.[0];return typeof t==`number`&&Number.isFinite(t)?t:void 0}function t(e){if(!e)return{};let t=e.split(/\s*(?:--|–|—|-)\s*/).filter(Boolean);return t.length===0?{}:t.length===1?{start:t[0]}:{start:t[0],end:t[t.length-1]}}export{t as n,e as t};
