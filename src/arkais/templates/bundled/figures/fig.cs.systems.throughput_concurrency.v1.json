@@ -1,0 +1,98 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.cs.systems.throughput_concurrency.v1",
+  "version": "1.0.0",
+  "name": "Throughput Scaling vs Worker Concurrency",
+  "description": "System throughput response as a function of parallel client concurrency threads.",
+  "category": "figures",
+  "discipline": "computer_science",
+  "tags": [
+    "throughput",
+    "concurrency",
+    "scaling",
+    "benchmarking"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-112",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "System throughput reaches a peak saturation ceiling of {peak_rps} req/s at {threads} concurrent threads ({fig_ref}) before thread contention induces plateauing.",
+    "required_metrics": [
+      "peak_rps",
+      "threads"
+    ],
+    "unit_discipline": "GATE-08"
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Evaluation executed on an 8-node Kubernetes cluster.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": {
+      "type": "line",
+      "point": true
+    },
+    "encoding": {
+      "x": {
+        "field": "threads",
+        "type": "quantitative",
+        "title": "Concurrent Threads"
+      },
+      "y": {
+        "field": "throughput_rps",
+        "type": "quantitative",
+        "title": "Throughput (req/s)"
+      },
+      "color": {
+        "field": "engine",
+        "type": "nominal",
+        "legend": {
+          "title": "Runtime Engine"
+        }
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "threads": 1,
+      "throughput_rps": 240,
+      "engine": "Arkais-V2"
+    },
+    {
+      "threads": 4,
+      "throughput_rps": 920,
+      "engine": "Arkais-V2"
+    },
+    {
+      "threads": 16,
+      "throughput_rps": 3450,
+      "engine": "Arkais-V2"
+    },
+    {
+      "threads": 64,
+      "throughput_rps": 5890,
+      "engine": "Arkais-V2"
+    },
+    {
+      "threads": 1,
+      "throughput_rps": 180,
+      "engine": "Baseline"
+    },
+    {
+      "threads": 4,
+      "throughput_rps": 650,
+      "engine": "Baseline"
+    },
+    {
+      "threads": 16,
+      "throughput_rps": 1950,
+      "engine": "Baseline"
+    },
+    {
+      "threads": 64,
+      "throughput_rps": 2400,
+      "engine": "Baseline"
+    }
+  ]
+}

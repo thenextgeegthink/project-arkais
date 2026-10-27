@@ -1,0 +1,106 @@
+{
+  "$schema": "https://arkais.geegthink.com/schemas/v1/template.json",
+  "id": "fig.cs.convergence.loss_curve.v1",
+  "version": "1.0.0",
+  "name": "Optimization Loss Convergence and Validation Trajectory",
+  "description": "Training and validation loss trajectories across optimization epochs with log-scale scaling.",
+  "category": "figures",
+  "discipline": "computer_science",
+  "tags": [
+    "deep-learning",
+    "loss",
+    "convergence",
+    "training",
+    "optimization"
+  ],
+  "engine": "vega-lite",
+  "author": "The Next Geek Think (NGT)",
+  "license": "Apache-2.0",
+  "provenance_ark": "ARK-050",
+  "signature_integration": {
+    "recommended_gate": "GATE-07",
+    "weaving_archetype": "parenthetical_grounding",
+    "in_prose_blueprint": "Validation loss achieves asymptotic convergence at {final_loss} after {optimal_epoch} epochs ({fig_ref}), confirming stability without gradient explosion.",
+    "required_metrics": [
+      "final_loss",
+      "optimal_epoch"
+    ],
+    "unit_discipline": "GATE-08",
+    "grounding_rules": [
+      "require_loss_bound",
+      "require_epoch_count"
+    ]
+  },
+  "caption_blueprint": "{prefix} {num}: {title}. Solid line indicates training loss; dashed line denotes validation cross-entropy evaluated every 5 epochs.",
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": {
+      "type": "line",
+      "point": true
+    },
+    "encoding": {
+      "x": {
+        "field": "epoch",
+        "type": "quantitative",
+        "title": "Epoch"
+      },
+      "y": {
+        "field": "loss",
+        "type": "quantitative",
+        "title": "Cross-Entropy Loss",
+        "scale": {
+          "type": "log"
+        }
+      },
+      "color": {
+        "field": "split",
+        "type": "nominal",
+        "legend": {
+          "title": "Split"
+        }
+      }
+    }
+  },
+  "sample_data": [
+    {
+      "epoch": 1,
+      "loss": 2.45,
+      "split": "Train"
+    },
+    {
+      "epoch": 5,
+      "loss": 1.12,
+      "split": "Train"
+    },
+    {
+      "epoch": 10,
+      "loss": 0.48,
+      "split": "Train"
+    },
+    {
+      "epoch": 20,
+      "loss": 0.18,
+      "split": "Train"
+    },
+    {
+      "epoch": 1,
+      "loss": 2.51,
+      "split": "Validation"
+    },
+    {
+      "epoch": 5,
+      "loss": 1.25,
+      "split": "Validation"
+    },
+    {
+      "epoch": 10,
+      "loss": 0.58,
+      "split": "Validation"
+    },
+    {
+      "epoch": 20,
+      "loss": 0.29,
+      "split": "Validation"
+    }
+  ]
+}
